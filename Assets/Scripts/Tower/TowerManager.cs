@@ -1,16 +1,42 @@
+using NUnit.Framework;
+using PD4.Singleton; // NAMESPACE WEGHALEN
+using System.Collections.Generic;
 using UnityEngine;
 
-public class TowerManager : MonoBehaviour
+public class TowerManager : MonobehaviourSingleton<TowerManager>
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    List<TowerBase> _towers = new List<TowerBase>();
+
+    public void RegisterTower(TowerBase tower)
     {
-        
+        _towers.Add(tower);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UnregisterTower(TowerBase tower)
     {
-        
+        _towers.Remove(tower);
+    }
+
+    private void Update()
+    {
+        HandleAttack();
+        HandleHunger();
+    }
+
+    private void HandleAttack()
+    {
+        foreach(var tower in  _towers)
+        {
+            tower.Attack();
+        }
+    }
+
+    private void HandleHunger()
+    {
+        foreach(var tower in _towers)
+        {
+            tower.UpdateHunger();
+            // TODO: update hunger bar event
+        }
     }
 }
