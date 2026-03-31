@@ -23,7 +23,7 @@ public abstract class TowerBase : MonoBehaviour
         TowerManager.Instance?.UnregisterTower(this);
     }
 
-    public abstract void Attack();
+    public abstract void Attack(GameObject enemy);
 
     public IEnumerator UpdateHunger()
     {
