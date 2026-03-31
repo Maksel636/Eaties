@@ -5,7 +5,7 @@ using UnityEngine;
 public class TowerManager : MonobehaviourSingleton<TowerManager>
 {
     List<TowerBase> _towers = new List<TowerBase>();
-    List<Enemy> _enemies = EnemyManager.Instance.Enemies;
+    List<Enemy> _enemies = new List<Enemy>();
 
     public void RegisterTower(TowerBase tower)
     {

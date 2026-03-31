@@ -11,7 +11,7 @@ public class TowerBase : MonoBehaviour
 
     // Timers
     [SerializeField]
-    private float _hungerTime = 120f;
+    private float _hungerTime = 10f;
     [SerializeField]
     private float _chargeAttackTime = 1f;
 
@@ -24,7 +24,7 @@ public class TowerBase : MonoBehaviour
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Awake()
     {
         TowerManager.Instance.RegisterTower(this);
         _hunger = _maxHunger;
@@ -35,6 +35,11 @@ public class TowerBase : MonoBehaviour
         TowerManager.Instance?.UnregisterTower(this);
     }
 
+    private void Start()
+    {
+        InvokeRepeating(nameof(UpdateHunger), _hungerTime, _hungerTime);
+    }
+
     public virtual void Attack(Enemy enemy)
     {
         if(_canAttack)
@@ -43,10 +48,9 @@ public class TowerBase : MonoBehaviour
         // Set can attack to false in the inherrited class
     }
 
-    public IEnumerator UpdateHunger()
+    public void UpdateHunger()
     {
         // NOT FINISHED
-        yield return new WaitForSeconds(_hungerTime);
         Debug.Log("HUNGRY");
         _hunger -= _hungerRemoveAmount;
     }
