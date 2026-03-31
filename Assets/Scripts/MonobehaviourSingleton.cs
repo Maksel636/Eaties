@@ -11,9 +11,7 @@ public abstract class MonobehaviourSingleton<T> : MonoBehaviour where T : Monobe
 
             if (_instance == null) //Lazy instantiation
             {
-#if UNITY_EDITOR
                 if (_applicationQuit) return null;
-#endif
 
                 GameObject gameObject = new GameObject(typeof(T).Name);
                 _instance = gameObject.AddComponent<T>();

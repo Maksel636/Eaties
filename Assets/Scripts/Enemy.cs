@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,11 +9,20 @@ public class Enemy : MonoBehaviour
         get { return _health; }
         set { _health = value; }
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    private bool _isPickedUp = false;
+    public bool IsPickedUp
     {
-        //EnemyManager.Instance.RegisterEnemy(this);
+        get => _isPickedUp;
+        set
+        {
+            _isPickedUp = value;
+            if (value == true) _movement.enabled = false;
+        }
     }
+
+    [SerializeField] private EnemyMovement _movement;
+
 
     // Update is called once per frame
     void Update()
@@ -22,6 +32,6 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        EnemyManager.Instance.UnRegisterEnemy(this);
+        EnemyManager.Instance?.UnRegisterEnemy(this);
     }
 }

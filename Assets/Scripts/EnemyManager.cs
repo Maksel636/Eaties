@@ -60,4 +60,5 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
     {
         _enemies.Remove(enemy);
     }
+
 }

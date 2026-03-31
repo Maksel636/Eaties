@@ -5,6 +5,7 @@ using UnityEngine;
 public class TowerManager : MonobehaviourSingleton<TowerManager>
 {
     List<TowerBase> _towers = new List<TowerBase>();
+    List<Enemy> _enemies = new List<Enemy>();
 
     public void RegisterTower(TowerBase tower)
     {
@@ -23,22 +24,27 @@ public class TowerManager : MonobehaviourSingleton<TowerManager>
 
     private void HandleAttack()
     {
-        List<Enemy> enemies = EnemyManager.Instance.Enemies;
+        _enemies = EnemyManager.Instance.Enemies;
         Enemy closestEnemy = null;
-        float closestDistance = 0;
+        float closestDistance = float.MaxValue;
         // Each tower finds the closest enemy and attacks it
-        foreach(var tower in  _towers)
+        foreach (var tower in _towers)
         {
-            foreach(var enemy in enemies) 
+            foreach (var enemy in _enemies)
             {
-                float distance = Vector2.Distance (tower.transform.position, enemy.transform.position);
-                if(distance < closestDistance)
+                float distance = Vector2.Distance(tower.transform.position, enemy.transform.position);
+                if (distance < closestDistance)
                 {
                     closestDistance = distance;
                     closestEnemy = enemy;
                 }
             }
-            tower.Attack(closestEnemy);
+            if (closestEnemy != null)
+            {
+                tower.Attack(closestEnemy);
+            }
         }
     }
+
+
 }
