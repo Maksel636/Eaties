@@ -6,14 +6,13 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float _moveSpeed;
 
     private Transform _target;
-    private int _waypointIndex = 1;
+    private int _waypointIndex = 0;
 
     private const float MOVEMENT_EPSILON = 0.3f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.position = Path.Instance.Waypoints[0].position;
         _target = Path.Instance.Waypoints[_waypointIndex];
     }
 
