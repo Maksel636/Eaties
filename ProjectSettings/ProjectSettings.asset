@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 38c8e9034b9595243bc172eca7dab57e
+  productGUID: c8530cb0a05f2ce498c274ded9513379
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -924,11 +924,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 3a5ed65f-6ffc-4f4c-ba37-eaa77d46e2c2
+  cloudProjectId: 5c1f3298-c0a6-4d38-9065-41e4e47200a0
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Eaties
-  organizationId: sengoemi
+  organizationId: progchloay
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
