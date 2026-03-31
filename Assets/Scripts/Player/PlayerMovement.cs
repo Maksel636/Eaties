@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float _grabRadius;
     [SerializeField] private Transform _grabSocket;
     private Enemy _currentEnemy = null;
-    public LayerMask _layerMask;
+    [SerializeField] private LayerMask _enemyMask;
+    [SerializeField] private LayerMask _towerSpotMask;
 
     private float _verticalSpeed = 0f;
 
@@ -50,7 +52,19 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleGrabInput(InputAction.CallbackContext context)
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, _grabRadius, _layerMask);
+        if (_currentEnemy)
+        {
+            TryTowerConstruction();
+        }
+        else
+        {
+            TryEnemyPickup();
+        }
+    }
+
+    void TryEnemyPickup()
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, _grabRadius, _enemyMask);
         foreach (Collider hit in hits)
         {
             _currentEnemy = hit.GetComponent<Enemy>();
@@ -59,5 +73,17 @@ public class PlayerMovement : MonoBehaviour
             _currentEnemy.transform.localPosition = Vector3.zero;
             break;
         }
+
     }
+
+    void TryTowerConstruction()
+    {
+        if (Physics.CheckSphere(transform.position, 0.1f, _towerSpotMask))
+        {
+            Debug.Log("Standing next to Tower Spot");
+        }
+
+    }
+
+
 }
