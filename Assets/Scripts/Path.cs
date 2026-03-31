@@ -20,8 +20,6 @@ public class Path : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this);
 
-        Debug.Log(transform.childCount);
-
         _waypoints = new Transform[transform.childCount];
         for (int idx = 0; idx < transform.childCount; ++idx)
         {
