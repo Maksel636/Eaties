@@ -11,7 +11,7 @@ public class TowerBase : MonoBehaviour
 
     // Timers
     [SerializeField]
-    private float _hungerTime = 10f;
+    private float _hungerTime = 5f;
     [SerializeField]
     private float _chargeAttackTime = 1f;
 
@@ -51,8 +51,8 @@ public class TowerBase : MonoBehaviour
     public void UpdateHunger()
     {
         // NOT FINISHED
-        Debug.Log("HUNGRY");
         _hunger -= _hungerRemoveAmount;
+        //Invoke()
     }
 
     private IEnumerator ChargeAttack()
