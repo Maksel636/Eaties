@@ -20,7 +20,6 @@ public class TowerManager : MonobehaviourSingleton<TowerManager>
     private void Update()
     {
         HandleAttack();
-        HandleHunger();
     }
 
     private void HandleAttack()
@@ -28,15 +27,6 @@ public class TowerManager : MonobehaviourSingleton<TowerManager>
         foreach(var tower in  _towers)
         {
             tower.Attack();
-        }
-    }
-
-    private void HandleHunger()
-    {
-        foreach(var tower in _towers)
-        {
-            tower.UpdateHunger();
-            // TODO: update hunger bar event
         }
     }
 }
