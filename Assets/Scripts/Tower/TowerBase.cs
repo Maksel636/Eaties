@@ -13,10 +13,10 @@ public class TowerBase : MonoBehaviour
     [SerializeField]
     private float _hungerTime = 120f;
     [SerializeField]
-    private float _chargeAttackTime = 10f;
+    private float _chargeAttackTime = 1f;
 
     // Attack property
-    bool _canAttack = true;
+    protected bool _canAttack = true;
     public bool CanAttack
     {
         get { return _canAttack; }
@@ -37,7 +37,10 @@ public class TowerBase : MonoBehaviour
 
     public virtual void Attack(Enemy enemy)
     {
-        StartCoroutine(ChargeAttack());
+        if(_canAttack)
+            StartCoroutine(ChargeAttack());
+
+        // Set can attack to false in the inherrited class
     }
 
     public IEnumerator UpdateHunger()
@@ -50,7 +53,6 @@ public class TowerBase : MonoBehaviour
 
     private IEnumerator ChargeAttack()
     {
-        _canAttack = false;
         yield return new WaitForSeconds(_chargeAttackTime);
         _canAttack = true;
     }
