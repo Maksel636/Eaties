@@ -125,4 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf5e94cc0d825344a28404e609a9b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerRanger
-  _waitTime: 120
+  _hungerTime: 120
+  _chargeAttackTime: 1
+  _damage: 1

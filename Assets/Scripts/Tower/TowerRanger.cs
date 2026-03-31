@@ -6,7 +6,11 @@ public class TowerRanger : TowerBase
     public override void Attack(Enemy enemy)
     {
         base.Attack(enemy);
-        enemy.Health -= _damage;
-        Debug.Log(enemy.Health);
+        Debug.Log(CanAttack);
+        if(_canAttack)
+        {
+            enemy.Health -= _damage;
+            _canAttack = false;
+        }
     }
 }
