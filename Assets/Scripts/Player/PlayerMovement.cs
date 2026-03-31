@@ -22,12 +22,11 @@ public class PlayerMovement : MonoBehaviour
         //move in 4 directions
         Vector2 input = _playerInput.actions["Move"].ReadValue<Vector2>(); ;
         Vector3 moveVelocity = new Vector3(input.x, 0f, input.y) * _moveSpeed;
-        Debug.Log(input);
         _controller.Move(moveVelocity * Time.deltaTime);
 
         //apply gravity
         _verticalSpeed += Physics.gravity.y * Time.fixedDeltaTime;
-        _controller.Move(Vector3.up * _verticalSpeed * Time.fixedDeltaTime);
+        _controller.Move(Vector3.up * (_verticalSpeed * Time.fixedDeltaTime));
         if (_controller.isGrounded)
         {
             _verticalSpeed = 0f;

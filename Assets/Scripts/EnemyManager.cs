@@ -43,6 +43,7 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
         for (int idx = 0; idx < wave.Count; ++idx)
         {
             var obj = Instantiate(_enemyPrefab);
+            obj.transform.position = Path.Instance.Waypoints[0].transform.position;
             _enemies.Add(obj.GetComponent<Enemy>());
             yield return new WaitForSeconds(wave.SpawnDelay);
         }
