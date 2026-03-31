@@ -555,6 +555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1880827384}
   - component: {fileID: 1880827385}
+  - component: {fileID: 1880827386}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -621,6 +622,18 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &1880827386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880827383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c818ea8e369ab8549a36a685674f95ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSpawnManager
 --- !u!1001 &3932089694653792940
 PrefabInstance:
   m_ObjectHideFlags: 0
