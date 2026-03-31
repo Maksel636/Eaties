@@ -2,14 +2,26 @@ using System.Collections;
 using UnityEngine;
 
 // Base class from which all towers inherit
-public abstract class TowerBase : MonoBehaviour
+public class TowerBase : MonoBehaviour
 {
+    // Hunger
     private int _hunger;
     private const int _maxHunger = 100;
     protected int _hungerRemoveAmount = 10;
 
+    // Timers
     [SerializeField]
-    private float _waitTime = 120f;
+    private float _hungerTime = 120f;
+    [SerializeField]
+    private float _chargeAttackTime = 10f;
+
+    // Attack property
+    bool _canAttack = true;
+    public bool CanAttack
+    {
+        get { return _canAttack; }
+        set { _canAttack = value; }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,12 +35,23 @@ public abstract class TowerBase : MonoBehaviour
         TowerManager.Instance?.UnregisterTower(this);
     }
 
-    public abstract void Attack(GameObject enemy);
+    public virtual void Attack(Enemy enemy)
+    {
+        StartCoroutine(ChargeAttack());
+    }
 
     public IEnumerator UpdateHunger()
     {
-        yield return new WaitForSeconds(_waitTime);
+        // NOT FINISHED
+        yield return new WaitForSeconds(_hungerTime);
         Debug.Log("HUNGRY");
         _hunger -= _hungerRemoveAmount;
+    }
+
+    private IEnumerator ChargeAttack()
+    {
+        _canAttack = false;
+        yield return new WaitForSeconds(_chargeAttackTime);
+        _canAttack = true;
     }
 }

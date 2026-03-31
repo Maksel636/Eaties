@@ -23,8 +23,8 @@ public class TowerManager : MonobehaviourSingleton<TowerManager>
 
     private void HandleAttack()
     {
-        List<GameObject> enemies = EnemyManager.Instance.Enemies;
-        GameObject closestEnemy = null;
+        List<Enemy> enemies = EnemyManager.Instance.Enemies;
+        Enemy closestEnemy = null;
         float closestDistance = 0;
         // Each tower finds the closest enemy and attacks it
         foreach(var tower in  _towers)
@@ -34,10 +34,11 @@ public class TowerManager : MonobehaviourSingleton<TowerManager>
                 float distance = Vector2.Distance (tower.transform.position, enemy.transform.position);
                 if(distance < closestDistance)
                 {
-
+                    closestDistance = distance;
+                    closestEnemy = enemy;
                 }
             }
-            //tower.Attack();
+            tower.Attack(closestEnemy);
         }
     }
 }
