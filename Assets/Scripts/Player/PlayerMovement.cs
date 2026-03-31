@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private InputActionReference _grabInput;
     [SerializeField] private float _grabRadius;
+    [SerializeField] private Transform _grabSocket;
+    private Enemy _currentEnemy = null;
+    public LayerMask _layerMask;
 
     private float _verticalSpeed = 0f;
 
@@ -26,8 +29,15 @@ public class PlayerMovement : MonoBehaviour
     {
         //move in 4 directions
         Vector2 input = _playerInput.actions["Move"].ReadValue<Vector2>(); ;
-        Vector3 moveVelocity = new Vector3(input.x, 0f, input.y) * _moveSpeed;
-        _controller.Move(moveVelocity * Time.deltaTime);
+        Vector3 moveDirection = new Vector3(input.x, 0f, input.y);
+        _controller.Move(moveDirection * (_moveSpeed * Time.deltaTime));
+
+        //Rotation
+        if (moveDirection.sqrMagnitude >= 0.01f)
+        {
+            transform.forward = moveDirection.normalized;
+        }
+        
 
         //apply gravity
         _verticalSpeed += Physics.gravity.y * Time.fixedDeltaTime;
@@ -40,13 +50,14 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleGrabInput(InputAction.CallbackContext context)
     {
-        Collider[] hits = Physics.OverlapSphere(transform.position, _grabRadius);
+        Collider[] hits = Physics.OverlapSphere(transform.position, _grabRadius, _layerMask);
         foreach (Collider hit in hits)
         {
-            if (hit.gameObject.name == "Enemy")
-            {
-                Debug.Log("Enemy nearby");
-            }
+            _currentEnemy = hit.GetComponent<Enemy>();
+            _currentEnemy.IsPickedUp = true;
+            _currentEnemy.transform.SetParent(_grabSocket);
+            _currentEnemy.transform.localPosition = Vector3.zero;
+            break;
         }
     }
 }
