@@ -11,11 +11,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private PlayerInput _playerInput;
 
+    [SerializeField] private InputActionReference _grabInput;
+    [SerializeField] private float _grabRadius;
+
     private float _verticalSpeed = 0f;
 
     private void Start()
     {
         _controller = GetComponent<CharacterController>();
+
+        _grabInput.action.performed += HandleGrabInput;
     }
     void Update()
     {
@@ -30,6 +35,18 @@ public class PlayerMovement : MonoBehaviour
         if (_controller.isGrounded)
         {
             _verticalSpeed = 0f;
+        }
+    }
+
+    void HandleGrabInput(InputAction.CallbackContext context)
+    {
+        Collider[] hits = Physics.OverlapSphere(transform.position, _grabRadius);
+        foreach (Collider hit in hits)
+        {
+            if (hit.gameObject.name == "Enemy")
+            {
+                Debug.Log("Enemy nearby");
+            }
         }
     }
 }
