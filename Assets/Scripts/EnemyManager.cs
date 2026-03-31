@@ -7,8 +7,8 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 {
     [SerializeField] private GameObject _enemyPrefab;
 
-    private List<GameObject> _enemies = new();
-    public List<GameObject> Enemies => _enemies;
+    private List<Enemy> _enemies = new();
+    public List<Enemy> Enemies => _enemies;
 
     [SerializeField] private List<Wave> _waves;
     private int _waveIndex = 0;
@@ -42,14 +42,20 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 
         for (int idx = 0; idx < wave.Count; ++idx)
         {
-            _enemies.Add(Instantiate(_enemyPrefab));
+            var obj = Instantiate(_enemyPrefab);
+            _enemies.Add(obj.GetComponent<Enemy>());
             yield return new WaitForSeconds(wave.SpawnDelay);
         }
 
         ++_waveIndex;
     }
 
-    public void UnRegisterEnemy(GameObject enemy)
+    public void RegisterEnemy(Enemy enemy)
+    {
+        _enemies.Add(enemy);
+    }
+
+    public void UnRegisterEnemy(Enemy enemy)
     {
         _enemies.Remove(enemy);
     }

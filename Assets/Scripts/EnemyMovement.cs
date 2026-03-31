@@ -41,9 +41,4 @@ public class EnemyMovement : MonoBehaviour
         _waypointIndex++;
         _target = Path.Instance.Waypoints[_waypointIndex];
     }
-
-    private void OnDestroy()
-    {
-        EnemyManager.Instance.UnRegisterEnemy(gameObject);
-    }
 }
