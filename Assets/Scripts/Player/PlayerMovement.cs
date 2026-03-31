@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
+        //move in 4 directions
         Vector2 input = _playerInput.actions["Move"].ReadValue<Vector2>(); ;
         Vector3 moveVelocity = new Vector3(input.x, 0f, input.y) * _moveSpeed;
         Debug.Log(input);
