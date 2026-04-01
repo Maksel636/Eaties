@@ -35,6 +35,8 @@ public class TowerManager : MonobehaviourSingleton<TowerManager>
                 if (enemy.IsPickedUp) continue;
 
                 float distance = Vector2.Distance(tower.transform.position, enemy.transform.position);
+                if (distance > tower.Range) continue;
+
                 if (distance < closestDistance)
                 {
                     closestDistance = distance;

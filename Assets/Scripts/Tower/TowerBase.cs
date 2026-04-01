@@ -12,8 +12,7 @@ public class TowerBase : MonoBehaviour
     public EventHandler<HungerArgs> _onHungerChanged;
     [SerializeField]
     private float _hungerTime = 30f;
-
-
+    
     // Attack
     [SerializeField]
     private float _chargeAttackTime = 1f;
@@ -25,6 +24,8 @@ public class TowerBase : MonoBehaviour
     }
     Enemy _targetEnemy;
 
+    [SerializeField] private float _range;
+    public float Range => _range;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
