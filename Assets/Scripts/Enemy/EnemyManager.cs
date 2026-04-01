@@ -47,8 +47,16 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
         _currentCooldown -= Time.deltaTime;
     }
 
+    bool _canSpawn = true;
+    public bool CanSpawn
+    {
+        get { return _canSpawn; }
+        set { _canSpawn = value; }
+    }
     private IEnumerator SpawnWave()
     {
+        if (_canSpawn == false) yield break; // Don't spawn when not in game scene
+
         Wave wave = _waves[_waveIndex];
         EnemiesAlive = wave.Count;
 

@@ -146,7 +146,6 @@ public class PlayerMovement : MonoBehaviour
         if(_currentMeat != null && _currentEnemy == null)
         {
             Destroy(_currentMeat.gameObject);
-            Debug.LogWarning("Drop meat");
         }
     }
 }
