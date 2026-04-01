@@ -27,10 +27,16 @@ public class CaptureAnimal : MonoBehaviour
     IEnumerator StartCoroutine(Transform other)
     {
         yield return new WaitForSeconds(0.5f);
-        _lasso.SetActive(false);
-        _lassoMech.IsLassoing = false;
-        _escapeAnimal = other.transform.GetChild(0).gameObject.GetComponent<EscapeAnimal>();
-        _escapeAnimal.JoinPlayer(_lasso.transform.parent);
+        if (_escapeAnimal != null)
+            if (!_escapeAnimal.IsEscaping) // if not escaping escape NOW
+            {
+                _lasso.SetActive(false);
+                _lassoMech.IsLassoing = false;
+                _escapeAnimal = other.transform.GetChild(0).gameObject.GetComponent<EscapeAnimal>();
+                _escapeAnimal.JoinPlayer(_lasso.transform.parent);
+            }
+
+
     }
     private void Update()
     {

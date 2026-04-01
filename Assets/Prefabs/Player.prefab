@@ -162,6 +162,7 @@ MonoBehaviour:
   IsLassoing: 0
   _lasso: {fileID: 8946901155030743728}
   IsAnimalEscaping: 0
+  Istrowing: 0
 --- !u!1 &4548937788368331057
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,7 +531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9086731857842219413, guid: 31e15d67765c66c46a5bf02bce48725e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
