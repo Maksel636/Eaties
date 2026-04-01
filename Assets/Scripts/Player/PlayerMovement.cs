@@ -85,18 +85,18 @@ public class PlayerMovement : MonoBehaviour
 
         
         // Pickup enemy
-        //Collider[] hits = Physics.OverlapSphere(transform.position, _grabRadius, _enemyMask);
+        Collider[] hits = Physics.OverlapSphere(transform.position, _grabRadius, _enemyMask);
         //foreach (Collider hit in hits)
         //{
-        //    Enemy enemy = hit.GetComponent<Enemy>();
+        //    //Enemy enemy = hit.GetComponent<Enemy>();
 
-        //    EscapeAnimal escape = enemy.GetComponentInChildren<EscapeAnimal>();
-        //    if (escape == null || !escape.IsCaptured) // verify that the creature is captured, if not
-        //        continue; // skip this enemy
+        //    //EscapeAnimal escape = enemy.GetComponentInChildren<EscapeAnimal>();
+        //    //if (escape == null || !escape.IsCaptured) // verify that the creature is captured, if not
+        //    //    continue; // skip this enemy
 
         //    Debug.LogError("Captures creature");
 
-        //    _currentEnemy = escape.GetComponentInParent<Enemy>();
+        //    _currentEnemy = hit.GetComponent<Enemy>();
         //    _currentEnemy.IsPickedUp = true;
         //    _currentEnemy.transform.SetParent(_grabSocket);
         //    _currentEnemy.transform.localPosition = Vector3.zero;
@@ -153,20 +153,11 @@ public class PlayerMovement : MonoBehaviour
             Destroy(_currentMeat.gameObject);
         }
     }
-
-    void HandleEnemyCapture()
+    public void GrabCapturedAnimal(GameObject capturedEnemy)
     {
-        foreach(var enemy in EnemyManager.Instance.Enemies)
-        {
-            EscapeAnimal escape = enemy.GetComponentInChildren<EscapeAnimal>();
-            if (escape == null || !escape.IsCaptured) // verify that the creature is captured, if not
-                return; // skip this enemy
-
-            _currentEnemy = enemy.GetComponent<Enemy>();
-            _currentEnemy.IsPickedUp = true;
-            _currentEnemy.transform.SetParent(_grabSocket);
-            _currentEnemy.transform.localPosition = Vector3.zero;
-        }
-        
+        _currentEnemy = capturedEnemy.GetComponent<Enemy>();
+        _currentEnemy.IsPickedUp = true;
+        _currentEnemy.transform.SetParent(_grabSocket);
+        _currentEnemy.transform.localPosition = Vector3.zero;
     }
 }
