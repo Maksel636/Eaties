@@ -12,8 +12,7 @@ public class TowerBase : MonoBehaviour
     public EventHandler<HungerArgs> _onHungerChanged;
     [SerializeField]
     private float _hungerTime = 30f;
-
-
+    
     // Attack
     [SerializeField]
     private float _chargeAttackTime = 1f;
@@ -25,6 +24,10 @@ public class TowerBase : MonoBehaviour
     }
     Enemy _targetEnemy;
 
+    [SerializeField] private float _range;
+    public float Range => _range;
+
+    [SerializeField] GameObject _rotatable;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -35,12 +38,13 @@ public class TowerBase : MonoBehaviour
 
     void Update()
     {
+        // Rotate tower towards targetting enemy
         if (_targetEnemy)
         {
-            Vector3 forward = _targetEnemy.transform.position - transform.position;
+            Vector3 forward = _targetEnemy.transform.position - _rotatable.transform.position;
             forward.y = 0;
 
-            transform.forward = forward.normalized;
+            _rotatable.transform.forward = forward.normalized;
         }
     }
 

@@ -33,7 +33,6 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 
         if (_waveIndex >= _waves.Count)
         {
-            Debug.Log("End of waves");
             gameObject.SetActive(false);
             return;
         }
@@ -50,8 +49,6 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 
     private IEnumerator SpawnWave()
     {
-        Debug.Log("Starting Wave " + _waveIndex);
-
         Wave wave = _waves[_waveIndex];
         EnemiesAlive = wave.Count;
 
