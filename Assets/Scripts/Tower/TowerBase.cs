@@ -55,6 +55,11 @@ public class TowerBase : MonoBehaviour
     {
         _hunger -= _hungerRemoveAmount;
 
+        if (_hunger <= 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
         
         _onHungerChanged?.Invoke(this, new HungerArgs(_hunger));
     }
