@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -12,19 +12,28 @@ public class EnemyMovement : MonoBehaviour
 
     private const float MOVEMENT_EPSILON = 0.3f;
 
+    [SerializeField] private float _maxPathOffset;
+    private Vector3 _pathOffset;
+    private Vector3 _targetPos;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        float offsetX = Random.Range(-_maxPathOffset, _maxPathOffset);
+        float offsetZ = Random.Range(-_maxPathOffset, _maxPathOffset);
+        _pathOffset = new Vector3(offsetX, 0f, offsetZ);
+
         _target = Path.Instance.Waypoints[_waypointIndex];
+        _targetPos = _target.position + _pathOffset;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = (_target.position - transform.position).normalized;
+        Vector3 direction = (_targetPos - transform.position).normalized;
         transform.Translate(direction * (_moveSpeed * Time.deltaTime));
 
-        if (Vector3.Distance(transform.position, _target.position) <= MOVEMENT_EPSILON)
+        if (Vector3.Distance(transform.position, _targetPos) <= MOVEMENT_EPSILON)
         {
             GetNextWaypoint();
         }
@@ -42,5 +51,6 @@ public class EnemyMovement : MonoBehaviour
 
         _waypointIndex++;
         _target = Path.Instance.Waypoints[_waypointIndex];
+        _targetPos = _target.transform.position + _pathOffset;
     }
 }
