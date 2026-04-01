@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
 {
     public Vector3 Direction { get; set; } = Vector3.zero;
     [SerializeField] private float _flightSpeed;
+    public float FlightSpeed => _flightSpeed;
     public int Damage { get; set; } = 0;
     [SerializeField] private float _maxLifetime;
 

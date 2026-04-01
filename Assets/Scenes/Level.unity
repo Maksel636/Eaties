@@ -1180,7 +1180,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerRanger
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7969285544025273778, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8365351172374290615, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -20,6 +20,8 @@ public class EnemyMovement : MonoBehaviour
 
     private Vector3 _lastPathPos;
 
+    private Vector3 _direction = Vector3.zero;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,13 +33,15 @@ public class EnemyMovement : MonoBehaviour
         _targetPos = _target.position + _pathOffset;
 
         transform.position += _pathOffset;
+
+        _direction = (_targetPos - transform.position).normalized;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = (_targetPos - transform.position).normalized;
-        transform.Translate(direction * (_moveSpeed * Time.deltaTime));
+        _direction = (_targetPos - transform.position).normalized;
+        transform.Translate(_direction * (_moveSpeed * Time.deltaTime));
 
         if (Vector3.Distance(transform.position, _targetPos) <= MOVEMENT_EPSILON)
         {
@@ -65,5 +69,11 @@ public class EnemyMovement : MonoBehaviour
     public void GoBackToPath()
     {
         transform.position = _lastPathPos;
+    }
+
+    public Vector3 GetPredictedPosition(float futureTime)
+    {
+        Vector3 predictedPos = transform.position + _direction * (_moveSpeed * futureTime);
+        return predictedPos;
     }
 }

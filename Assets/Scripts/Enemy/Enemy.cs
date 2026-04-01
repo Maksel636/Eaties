@@ -65,4 +65,9 @@ public class Enemy : MonoBehaviour
     {
         EnemyManager.Instance?.UnRegisterEnemy(this);
     }
+
+    public Vector3 GetPredictedPosition(float futureTime)
+    {
+        return _movement.GetPredictedPosition(futureTime);
+    }
 }
