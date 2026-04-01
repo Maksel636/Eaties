@@ -108,6 +108,10 @@ public class PlayerMovement : MonoBehaviour
     {
         _currentEnemy.IsPickedUp = false;
         _currentEnemy.transform.rotation = Quaternion.Euler(0, 0, 0);
+        var pos = _currentEnemy.transform.position;
+        pos.y = 0;
+        _currentEnemy.transform.position = pos;
         _currentEnemy.transform.SetParent(null);
+        _currentEnemy = null;
     }
 }
