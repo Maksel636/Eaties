@@ -41,7 +41,8 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         _direction = (_targetPos - transform.position).normalized;
-        transform.Translate(_direction * (_moveSpeed * Time.deltaTime));
+        transform.forward = _direction;
+        transform.Translate(_direction * (_moveSpeed * Time.deltaTime), Space.World);
 
         if (Vector3.Distance(transform.position, _targetPos) <= MOVEMENT_EPSILON)
         {
