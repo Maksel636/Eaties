@@ -578,6 +578,7 @@ MonoBehaviour:
     rotation: 0
     direction: 0
     escapeSteps: 0
+  _lassoMech: {fileID: 0}
   _escapeSteps: 0
   _lassoDonutPrefab: {fileID: 919132149155446097, guid: aa891760d11f3b848a78ceb40a9d893e, type: 3}
   _directionIndicatorPrefab: {fileID: 2544505540525343994, guid: baa92b8ff78d8b04d981da8524e97ed3, type: 3}
@@ -928,7 +929,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LassoMech
   _animator: {fileID: 747919843}
   IsLassoing: 0
-  _lasso: {fileID: 747919842}
+  _lasso: {fileID: 889128412}
   IsAnimalEscaping: 0
 --- !u!143 &1725184422
 CharacterController:
@@ -977,6 +978,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   _towerSpotMask:
+    serializedVersion: 2
+    m_Bits: 0
+  _meatMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!1 &1809775346

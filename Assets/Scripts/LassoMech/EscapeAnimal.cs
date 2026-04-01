@@ -11,17 +11,15 @@ public class EscapeAnimal : MonoBehaviour
     private int _direction;
 
     [SerializeField] private List<PlayerData> _playersData;
+    [SerializeField] private LassoMech _lassoMech;
 
     [SerializeField]private float _escapeSteps;
-    //[SerializeField] private List<Transform> _playerTransform;
     [SerializeField] private GameObject _lassoDonutPrefab;
     [SerializeField] private GameObject _directionIndicatorPrefab;
     [SerializeField] private GameObject _lassoDonut;
     [SerializeField] private float _score;
-    //[SerializeField] private List<Transform> _directionIndicator;
     [SerializeField] private float _shrinkSpeed = 1f;
     [SerializeField] private float _winScore = 1.5f;
-    //[SerializeField] private GameObject[] _line;
     [SerializeField] private int _players;
     private Color[] _playerColors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
     [SerializeField] private GameObject testObject;
@@ -147,6 +145,7 @@ public class EscapeAnimal : MonoBehaviour
     private void EndCapturing()
     {
         _isEscaping = false;
+        
         //for (int i = 0; i < _players; i++)
         //    _line[i].SetActive(false);
         foreach (var player in _playersData)
