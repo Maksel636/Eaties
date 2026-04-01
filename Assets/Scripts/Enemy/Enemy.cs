@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         EnemyManager.Instance?.UnRegisterEnemy(this);
     }
