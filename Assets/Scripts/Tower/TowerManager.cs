@@ -32,6 +32,8 @@ public class TowerManager : MonobehaviourSingleton<TowerManager>
         {
             foreach (var enemy in _enemies)
             {
+                if (enemy.IsPickedUp) continue;
+
                 float distance = Vector2.Distance(tower.transform.position, enemy.transform.position);
                 if (distance < closestDistance)
                 {

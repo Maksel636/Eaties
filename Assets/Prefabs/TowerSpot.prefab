@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6798568117708065000}
   - component: {fileID: 4824329960191717400}
-  m_Layer: 8
+  - component: {fileID: 7008055637678513010}
+  m_Layer: 7
   m_Name: TowerSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +55,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5, y: 0.5, z: 1.5}
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &7008055637678513010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4911107023334947826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d6be49554a49fc439c5f9d428cf1fe6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerSpot
+  _rangerPrefab: {fileID: 7969285544025273778, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
 --- !u!1 &7353304929233558274
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,7 +79,7 @@ GameObject:
   - component: {fileID: 243746456080547662}
   - component: {fileID: 5867625656611659922}
   - component: {fileID: 8827583251282056924}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: TowerPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
