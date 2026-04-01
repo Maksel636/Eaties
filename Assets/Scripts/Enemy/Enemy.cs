@@ -79,5 +79,6 @@ public class Enemy : MonoBehaviour
 public enum EnemyType
 {
     Basic,
-    Piercing
+    Piercing,
+    Octopus
 }

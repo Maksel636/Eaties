@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask _towerSpotMask;
     GameObject _currentMeat;
     [SerializeField] private LayerMask _meatMask;
+    [SerializeField] private Animator _animator;
 
     private float _verticalSpeed = 0f;
 
@@ -33,6 +34,13 @@ public class PlayerMovement : MonoBehaviour
         //move in 4 directions
         Vector2 input = _playerInput.actions["Move"].ReadValue<Vector2>(); ;
         Vector3 moveDirection = new Vector3(input.x, 0f, input.y);
+        
+        if(!(moveDirection.magnitude < 0.01) && _animator != null)
+        {
+            if (!_animator.GetBool("isWalking")) 
+            _animator.SetBool("isWalking", true);
+        }
+
         _controller.Move(moveDirection * (_moveSpeed * Time.deltaTime));
 
         //Rotation
