@@ -416,6 +416,7 @@ MonoBehaviour:
   _hungerTime: 15
   _chargeAttackTime: 1
   _damage: 1
+  _bulletPrefab: {fileID: 2373347655552558195, guid: 13ac24c956ece7e49945fc19fe7f5ff9, type: 3}
 --- !u!120 &8365351172374290615
 LineRenderer:
   serializedVersion: 3
@@ -424,7 +425,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7969285544025273778}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

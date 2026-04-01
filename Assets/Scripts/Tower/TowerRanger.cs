@@ -4,14 +4,14 @@ using UnityEngine;
 public class TowerRanger : TowerBase
 {
     [SerializeField] private int _damage = 1;
+    [SerializeField] private GameObject _bulletPrefab;
 
     public override void Attack(Enemy enemy)
     {
         base.Attack(enemy);
         if(_canAttack)
         {
-            Debug.Log("Attack " + enemy.gameObject.name);
-            enemy.TakeDamage(_damage);
+            //enemy.TakeDamage(_damage);
             _canAttack = false;
 
             
@@ -24,6 +24,11 @@ public class TowerRanger : TowerBase
 
             Debug.DrawLine(start, end, Color.red, duration);
 
+            var bulletObj = Instantiate(_bulletPrefab, start, Quaternion.Euler(0,0,0));
+            
+            var bullet = bulletObj.GetComponent<Bullet>();
+            bullet.Direction = (end - start).normalized;
+            bullet.Damage = _damage;
         }       
     }
 }
