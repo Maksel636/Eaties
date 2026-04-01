@@ -18,7 +18,8 @@ public class Enemy : MonoBehaviour
         set
         {
             _isPickedUp = value;
-            if (value == true) _movement.enabled = false;
+            _movement.enabled = !value;
+            _movement.GoBackToPath();
         }
     }
 

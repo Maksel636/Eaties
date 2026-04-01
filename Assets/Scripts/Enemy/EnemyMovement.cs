@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 public class EnemyMovement : MonoBehaviour
@@ -16,6 +18,8 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 _pathOffset;
     private Vector3 _targetPos;
 
+    private Vector3 _lastPathPos;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,6 +29,8 @@ public class EnemyMovement : MonoBehaviour
 
         _target = Path.Instance.Waypoints[_waypointIndex];
         _targetPos = _target.position + _pathOffset;
+
+        transform.position += _pathOffset;
     }
 
     // Update is called once per frame
@@ -37,6 +43,8 @@ public class EnemyMovement : MonoBehaviour
         {
             GetNextWaypoint();
         }
+
+        _lastPathPos = transform.position;
     }
 
     private void GetNextWaypoint()
@@ -52,5 +60,11 @@ public class EnemyMovement : MonoBehaviour
         _waypointIndex++;
         _target = Path.Instance.Waypoints[_waypointIndex];
         _targetPos = _target.transform.position + _pathOffset;
+    }
+
+
+    public void GoBackToPath()
+    {
+        transform.position = _lastPathPos;
     }
 }

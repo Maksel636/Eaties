@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   _moveSpeed: 2
+  _maxPathOffset: 0.5
 --- !u!114 &5793025923865629001
 MonoBehaviour:
   m_ObjectHideFlags: 0
