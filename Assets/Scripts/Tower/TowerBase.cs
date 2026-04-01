@@ -33,6 +33,17 @@ public class TowerBase : MonoBehaviour
         _hunger = _maxHunger;
     }
 
+    void Update()
+    {
+        if (_targetEnemy)
+        {
+            Vector3 forward = _targetEnemy.transform.position - transform.position;
+            forward.y = 0;
+
+            transform.forward = forward.normalized;
+        }
+    }
+
     private void OnDestroy()
     {
         TowerManager.Instance?.UnregisterTower(this);
