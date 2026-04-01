@@ -42,17 +42,9 @@ public class EscapeAnimal : MonoBehaviour
     {
         if(_isEscaping) return;
 
-
-        //JoinPlayer(GameObject.FindGameObjectWithTag("Player").transform);
-        //JoinPlayer(testObject.transform);
-
+        _score = 0;
         _lassoDonut = Instantiate(_lassoDonutPrefab, transform.parent);
-        //_rotation = Random.Range(0,360);
         _isEscaping = true;
-
-        //for(int i = 0; i < _players; i++)
-        //    _directionIndicator[i].SetActive(true);
-
     }
     public void JoinPlayer(Transform player)
     {

@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2835882803288258925
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4023991525641277066}
+  - component: {fileID: 432395920455669168}
+  m_Layer: 0
+  m_Name: EscapeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4023991525641277066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835882803288258925}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.68361497, z: -0, w: 0.72984296}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 86.254, z: 0}
+--- !u!114 &432395920455669168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2835882803288258925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97facb0c1c2810b4d9126080745551a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EscapeAnimal
+  _escapSpeed: 100
+  _rotation: 0
+  _isEscaping: 0
+  _playersData:
+  - player: {fileID: 0}
+    indicatororigin: {fileID: 0}
+    rotation: 0
+    direction: 0
+    escapeSteps: 0
+  _lassoMech: {fileID: 0}
+  _escapeSteps: 0
+  _lassoDonutPrefab: {fileID: 919132149155446097, guid: aa891760d11f3b848a78ceb40a9d893e, type: 3}
+  _directionIndicatorPrefab: {fileID: 2544505540525343994, guid: baa92b8ff78d8b04d981da8524e97ed3, type: 3}
+  _lassoDonut: {fileID: 0}
+  _score: 1
+  _shrinkSpeed: 1
+  _winScore: 10
+  _players: 0
+  testObject: {fileID: 0}
