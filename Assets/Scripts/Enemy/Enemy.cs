@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
         {
             _isPickedUp = value;
             _movement.enabled = !value;
+            _movement.GoBackToPath();
         }
     }
 
