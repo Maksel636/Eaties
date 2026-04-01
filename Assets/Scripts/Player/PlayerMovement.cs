@@ -49,10 +49,6 @@ public class PlayerMovement : MonoBehaviour
         {
             _verticalSpeed = 0f;
         }
-
-
-        // Capture enemies
-        HandleEnemyCapture();
     }
 
     void HandleGrabInput(InputAction.CallbackContext context)
