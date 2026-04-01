@@ -5,6 +5,7 @@ public class TowerSpot : MonoBehaviour
     private TowerBase _activeTower = null;
     [SerializeField] private GameObject _rangerPrefab;
     [SerializeField] private GameObject _piercingPrefab;
+    [SerializeField] private GameObject _octopusPrefab;
     
     public bool HasActiveTower => _activeTower != null;
 
@@ -30,6 +31,7 @@ public class TowerSpot : MonoBehaviour
         {
             case EnemyType.Basic: towerToSpawn = _rangerPrefab; break;
             case EnemyType.Piercing: towerToSpawn = _piercingPrefab; break;
+            case EnemyType.Octopus: towerToSpawn= _octopusPrefab; break;
         }
 
         var towerObj = Instantiate(towerToSpawn, transform.position, transform.rotation);
