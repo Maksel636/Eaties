@@ -93,7 +93,7 @@ public class TowerBase : MonoBehaviour
     // Feed mechanic
     private void OnTriggerEnter(Collider other)
     {
-        const int hungerPoints = 30;
+        const int hungerPoints = 20;
         if (other.transform.CompareTag("Meat"))
         {
             Destroy(other.gameObject);
