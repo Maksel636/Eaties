@@ -254,6 +254,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &6050741565620352418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1073703126694045891}
+  m_Layer: 0
+  m_Name: BulletSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1073703126694045891
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6050741565620352418}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.185, z: 0.155}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7378010190361061886}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7499061039670737815
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +351,7 @@ Transform:
   m_Children:
   - {fileID: 3077537953542930178}
   - {fileID: 559942644533145670}
+  - {fileID: 1073703126694045891}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4564956962923646008
@@ -355,12 +387,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf5e94cc0d825344a28404e609a9b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerRanger
-  _hungerTime: 8
+  _hungerTime: 3
   _chargeAttackTime: 1
   _range: 0.5
   _rotatable: {fileID: 7499061039670737815}
   _damage: 1
   _bulletPrefab: {fileID: 2373347655552558195, guid: 13ac24c956ece7e49945fc19fe7f5ff9, type: 3}
+  _bulletSocket: {fileID: 6050741565620352418}
 --- !u!54 &4039482759425595663
 Rigidbody:
   m_ObjectHideFlags: 0

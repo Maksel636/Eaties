@@ -6,6 +6,7 @@ public class TowerRanger : TowerBase
 {
     [SerializeField] private int _damage = 1;
     [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private GameObject _bulletSocket;
 
     private float _bulletSpeed = 0;
 
@@ -22,16 +23,14 @@ public class TowerRanger : TowerBase
         {
             _canAttack = false;
 
-            Vector3 start = transform.position;
-            start.y += 0.6f;
             Vector3 end = enemy.transform.position;
-            float time = Vector3.Distance(start, end) / _bulletSpeed;
+            float time = Vector3.Distance(_bulletSocket.transform.position, end) / _bulletSpeed;
             Vector3 futureEnd = enemy.GetPredictedPosition(time);
 
-            var bulletObj = Instantiate(_bulletPrefab, start, Quaternion.Euler(0,0,0));
+            var bulletObj = Instantiate(_bulletPrefab, _bulletSocket.transform.position, Quaternion.Euler(0,0,0));
             
             var bullet = bulletObj.GetComponent<Bullet>();
-            bullet.Direction = (futureEnd - start).normalized;
+            bullet.Direction = (futureEnd - _bulletSocket.transform.position).normalized;
             bullet.Damage = _damage;
         }       
     }
