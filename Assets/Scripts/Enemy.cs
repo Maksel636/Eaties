@@ -32,6 +32,6 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        EnemyManager.Instance.UnRegisterEnemy(this);
+        EnemyManager.Instance?.UnRegisterEnemy(this);
     }
 }
