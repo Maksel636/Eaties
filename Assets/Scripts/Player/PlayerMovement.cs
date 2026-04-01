@@ -52,6 +52,8 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleGrabInput(InputAction.CallbackContext context)
     {
+        if (!context.performed) return;
+
         if (_currentEnemy)
         {
             TryTowerConstruction();
@@ -81,6 +83,21 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.CheckSphere(transform.position, 0.1f, _towerSpotMask))
         {
             Debug.Log("Standing next to Tower Spot");
+
+            Collider[] hits = Physics.OverlapSphere(transform.position, 0.1f, _towerSpotMask);
+            if (hits.Length > 0)
+            {
+                var towerSpot = hits[0].GetComponent<TowerSpot>();
+
+                if (!towerSpot.HasActiveTower)
+                {
+                    if (towerSpot.PlaceTower(_currentEnemy))
+                    {
+                        Destroy(_currentEnemy.gameObject);
+                        _currentEnemy = null;   
+                    }
+                }
+            }
         }
 
     }
