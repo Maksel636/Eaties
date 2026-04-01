@@ -25,6 +25,8 @@ public class EnemyMovement : MonoBehaviour
 
         _target = Path.Instance.Waypoints[_waypointIndex];
         _targetPos = _target.position + _pathOffset;
+
+        transform.position += _pathOffset;
     }
 
     // Update is called once per frame
