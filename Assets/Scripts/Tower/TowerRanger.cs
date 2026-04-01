@@ -13,7 +13,6 @@ public class TowerRanger : TowerBase
     {
         base.Start();
         _bulletSpeed = _bulletPrefab.GetComponent<Bullet>().FlightSpeed;
-        Debug.Log(_bulletSpeed);
     }
 
     public override void Attack(Enemy enemy)
