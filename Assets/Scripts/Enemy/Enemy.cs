@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour
     }
 
     [SerializeField] private EnemyMovement _movement;
+    public float MoveSpeed => _movement.MoveSpeed;
 
     private void Awake()
     {

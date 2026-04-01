@@ -5,6 +5,8 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
 
+    public float MoveSpeed => _moveSpeed;
+
     private Transform _target;
     private int _waypointIndex = 0;
 
