@@ -9,8 +9,9 @@ public class TowerRanger : TowerBase
 
     private float _bulletSpeed = 0;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
         _bulletSpeed = _bulletPrefab.GetComponent<Bullet>().FlightSpeed;
     }
 
