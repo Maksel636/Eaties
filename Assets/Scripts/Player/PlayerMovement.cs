@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!context.performed) return;
 
+        DropMeat();
         if (_currentEnemy)
         {
             if (Physics.CheckSphere(transform.position, 0.1f, _towerSpotMask))
@@ -88,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
             _currentEnemy.transform.localPosition = Vector3.zero;
             break;
         }
+        if (_currentEnemy != null) return; // You just picked up an enemy
         // Pickup meat
         hits = Physics.OverlapSphere(transform.position, _grabRadius, _meatMask);
         foreach (Collider hit in hits)
@@ -126,5 +128,15 @@ public class PlayerMovement : MonoBehaviour
         _currentEnemy.transform.position = pos;
         _currentEnemy.transform.SetParent(null);
         _currentEnemy = null;
+    }
+
+    private void DropMeat()
+    {
+        // When holding meat, delete it
+        if(_currentMeat != null && _currentEnemy == null)
+        {
+            Destroy(_currentMeat.gameObject);
+            Debug.LogWarning("Drop meat");
+        }
     }
 }
