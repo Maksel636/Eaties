@@ -24,9 +24,6 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Debug.Log("hit enemy");
-            Debug.Log(other.gameObject.name);
-
             other.GetComponent<Enemy>().TakeDamage(Damage);
             Destroy(gameObject);
         }
