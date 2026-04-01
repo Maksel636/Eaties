@@ -5,19 +5,25 @@ using UnityEngine;
 
 public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 {
-    [SerializeField] private GameObject _enemyPrefab;
-
     private List<Enemy> _enemies = new();
     public List<Enemy> Enemies => _enemies;
 
-    [SerializeField] private List<Wave> _waves;
+    private List<Wave> _waves;
     private int _waveIndex = 0;
 
     public int EnemiesAlive { get; set; } = 0;
 
-    [SerializeField] private float _cooldownBetweenWaves;
+    private float _cooldownBetweenWaves = 1f;
     private float _currentCooldown = 0f;
 
+    private void Start()
+    {
+        var waveData = FindFirstObjectByType<WaveData>();
+        if (waveData)
+        {
+            _waves = waveData.Waves;
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -51,7 +57,7 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 
         for (int idx = 0; idx < wave.Count; ++idx)
         {
-            var obj = Instantiate(_enemyPrefab);
+            var obj = Instantiate(wave.EnemyPrefab);
             obj.transform.position = Path.Instance.Waypoints[0].transform.position;
             _enemies.Add(obj.GetComponent<Enemy>());
             yield return new WaitForSeconds(wave.SpawnDelay);
