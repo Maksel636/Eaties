@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,8 @@ public class LassoMech : MonoBehaviour
     public bool IsLassoing = false;
     [SerializeField] private GameObject _lasso;
     public bool IsAnimalEscaping = false;
+    public bool Istrowing = false;
+    private float _onesecTimer = 0f;
     private void Start()
     {
         _animator.speed = 0.5f;
@@ -22,10 +25,10 @@ public class LassoMech : MonoBehaviour
 
             if (IsLassoing)
             {
+                Istrowing = true;
                 PlayerMovement pm = gameObject.GetComponent<PlayerMovement>(); // maybe set speed to 0 or something
-
-
                 _animator.SetTrigger("Trow");
+                _onesecTimer = 1f;
             }
             
 
@@ -34,9 +37,28 @@ public class LassoMech : MonoBehaviour
         }
         
     }
+    private void Update()
+    {
+        if (Istrowing)
+        {
+            _onesecTimer -= Time.deltaTime;
+            if (_onesecTimer <= 0f)
+            {
+                Istrowing = false;
+            }
+        }
+    }
+
     public void OnStopLasso(InputValue value)
     {
         IsLassoing = false;
         _lasso.SetActive(false);
+    }
+    public void ResetLasso()
+    {
+        IsAnimalEscaping = false;
+        IsLassoing = false;
+        _lasso.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 }
