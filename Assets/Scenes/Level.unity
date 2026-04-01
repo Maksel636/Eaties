@@ -421,9 +421,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SimplePlayerJoinManager
   playerPrefabs:
   - {fileID: 5183287577735379912, guid: 0e8bbdd84b7624f49bd8a5934a7df4a6, type: 3}
-  - {fileID: 8818165488151570467, guid: 5151b57f50352c04393961f53fad30d0, type: 3}
+  - {fileID: 8889544326838940945, guid: 5151b57f50352c04393961f53fad30d0, type: 3}
   - {fileID: 6344031303862915134, guid: 21c86a4d46f73dd4883129fc9f00aec1, type: 3}
-  - {fileID: 114231617302593796, guid: 66cb6d65da61cb44e80f5950b9dd6792, type: 3}
+  - {fileID: 8017037900125639715, guid: 200d2eb2606d11b47a9805189706c214, type: 3}
   spawnPoints: []
 --- !u!4 &125645309
 Transform:
@@ -3176,6 +3176,10 @@ PrefabInstance:
     - target: {fileID: 5844216710633659179, guid: 3ba3558ad1d51ef4e9a6c81f8444f22e, type: 3}
       propertyPath: m_Name
       value: PlayerInputManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5844216710633659179, guid: 3ba3558ad1d51ef4e9a6c81f8444f22e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
