@@ -5,23 +5,29 @@ using Random = UnityEngine.Random;
 
 public class EscapeAnimal : MonoBehaviour
 {
-    [SerializeField] private float _escapSpeed = 5f;
-    [SerializeField] private float _rotation = 0;
+    [Header("Prefabs")]
+    [SerializeField] private GameObject _directionIndicatorPrefab;
+    [SerializeField] private GameObject _lassoDonutPrefab;
+
+    [Header("DifficutlyLasso")]
+    [SerializeField] private float _winScore;
+    [SerializeField] private float _escapSpeed;
+    [SerializeField]private float _escapeSteps;
+
+    //[SerializeField] private LassoMech _lassoMech;
+    [Header("Extra Data")]
+    [SerializeField] private float _shrinkSpeed;
+    [SerializeField] private Color[] _playerColors = new Color[] { Color.blue, Color.yellow, Color.green, Color.mistyRose };
+    [SerializeField] private float _score;
+    [SerializeField] private List<PlayerData> _playersData;
+
+    [Header("publics")]
     public bool IsEscaping = false;
     public bool IsCaptured = false;
 
-    [SerializeField] private List<PlayerData> _playersData;
-    [SerializeField] private LassoMech _lassoMech;
-
-    [SerializeField]private float _escapeSteps;
-    [SerializeField] private GameObject _lassoDonutPrefab;
-    [SerializeField] private GameObject _directionIndicatorPrefab;
-    [SerializeField] private GameObject _lassoDonut;
-    [SerializeField] private float _score;
-    [SerializeField] private float _shrinkSpeed = 1f;
-    [SerializeField] private float _winScore = 1.5f;
-    [SerializeField] private int _players;
-    private Color[] _playerColors = new Color[] { Color.blue, Color.yellow, Color.green, Color.mistyRose };
+    private GameObject _lassoDonut;
+    private float _rotation = 0;
+    //[SerializeField] private int _players;
   //  [SerializeField] private GameObject testObject;
     void Awake()
     {

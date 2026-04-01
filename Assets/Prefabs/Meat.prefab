@@ -157,4 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb89d70e6f2864443b4dd29fd9719a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemAnimator
-  _rotationSpeed: 30
+  _rotationSpeed: 40
+  _timer: 0
+  _despawnTime: 15
