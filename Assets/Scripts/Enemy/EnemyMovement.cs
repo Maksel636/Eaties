@@ -35,6 +35,7 @@ public class EnemyMovement : MonoBehaviour
         if ((_waypointIndex + 1) >= Path.Instance.Waypoints.Length)
         {
             Debug.Log("End of path");
+            GameHealth.Instance.TakeDamage();
             Destroy(gameObject);
             return;
         }
