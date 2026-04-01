@@ -8,6 +8,11 @@ public class Bullet : MonoBehaviour
     public float FlightSpeed => _flightSpeed;
     public int Damage { get; set; } = 0;
     [SerializeField] private float _maxLifetime;
+    public float MaxLifeTime
+    {
+        get { return _maxLifetime; }
+        set { _maxLifetime = value; }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

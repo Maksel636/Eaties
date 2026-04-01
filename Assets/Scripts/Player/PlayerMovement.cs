@@ -90,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
         //    //if (escape == null || !escape.IsCaptured) // verify that the creature is captured, if not
         //    //    continue; // skip this enemy
 
+        //    Debug.LogError("Captures creature");
 
         //    _currentEnemy = hit.GetComponent<Enemy>();
         //    _currentEnemy.IsPickedUp = true;
