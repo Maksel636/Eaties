@@ -131,25 +131,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97facb0c1c2810b4d9126080745551a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EscapeAnimal
+  _directionIndicatorPrefab: {fileID: 2544505540525343994, guid: baa92b8ff78d8b04d981da8524e97ed3, type: 3}
+  _lassoDonutPrefab: {fileID: 734330034618856392, guid: 54930c6dcdff72f4da1f4110a1123386, type: 3}
+  _winScore: 5
   _escapSpeed: 50
-  _rotation: 0
-  _isEscaping: 0
+  _escapeSteps: 100
+  _shrinkSpeed: 1
+  _playerColors:
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0.8941177, b: 0.882353, a: 1}
+  _score: 0
   _playersData:
   - player: {fileID: 0}
     indicatororigin: {fileID: 0}
     rotation: 0
     direction: 0
     escapeSteps: 0
-  _lassoMech: {fileID: 0}
-  _escapeSteps: 100
-  _lassoDonutPrefab: {fileID: 734330034618856392, guid: 54930c6dcdff72f4da1f4110a1123386, type: 3}
-  _directionIndicatorPrefab: {fileID: 2544505540525343994, guid: baa92b8ff78d8b04d981da8524e97ed3, type: 3}
-  _lassoDonut: {fileID: 0}
-  _score: 0
-  _shrinkSpeed: 1
-  _winScore: 1.5
-  _players: 0
-  testObject: {fileID: 0}
+  IsEscaping: 0
+  IsCaptured: 0
 --- !u!1001 &7599502162390171240
 PrefabInstance:
   m_ObjectHideFlags: 0
