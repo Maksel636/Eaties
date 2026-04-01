@@ -14,10 +14,10 @@ public class LassoMech : MonoBehaviour
     public void OnLasso(InputValue value)
     {
         if(IsAnimalEscaping) return;
+        _lasso.SetActive(true);
 
         if (value.isPressed)
         {
-            _lasso.SetActive(true);
 
 
             if (IsLassoing)
