@@ -38,7 +38,7 @@ public class TowerBase : MonoBehaviour
         TowerManager.Instance?.UnregisterTower(this);
     }
 
-    private void Start()
+    virtual protected void Start()
     {
         InvokeRepeating(nameof(UpdateHunger), _hungerTime, _hungerTime);
         _onHungerChanged?.Invoke(this, new HungerArgs(_hunger));
@@ -73,6 +73,20 @@ public class TowerBase : MonoBehaviour
     {
         yield return new WaitForSeconds(_chargeAttackTime);
         _canAttack = true;
+    }
+
+    // Feed mechanic
+    private void OnTriggerEnter(Collider other)
+    {
+        const int hungerPoints = 30;
+        if (other.transform.CompareTag("Meat"))
+        {
+            Destroy(other.gameObject);
+            _hunger += hungerPoints;
+            if(_hunger > _maxHunger)
+                _hunger = _maxHunger;
+            _onHungerChanged?.Invoke(this, new HungerArgs(_hunger));
+        }
     }
 }
 

@@ -17,5 +17,6 @@ public class HungerUI : MonoBehaviour
     private void UpdateUI(object sender, HungerArgs hunger)
     {
         _hungerText.text = "Hunger: " + hunger._hunger;
+        Debug.Log("update");
     }
 }

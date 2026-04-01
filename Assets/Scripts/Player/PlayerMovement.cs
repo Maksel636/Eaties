@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     private Enemy _currentEnemy = null;
     [SerializeField] private LayerMask _enemyMask;
     [SerializeField] private LayerMask _towerSpotMask;
+    GameObject _currentMeat;
+    [SerializeField] private LayerMask _meatMask;
 
     private float _verticalSpeed = 0f;
 
@@ -68,12 +70,15 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            TryEnemyPickup();
+            TryPickup();
         }
     }
 
-    void TryEnemyPickup()
+    void TryPickup()
     {
+        if (_currentEnemy != null || _currentMeat != null) // Something is already picked up
+            return;
+        // Pickup enemy
         Collider[] hits = Physics.OverlapSphere(transform.position, _grabRadius, _enemyMask);
         foreach (Collider hit in hits)
         {
@@ -83,7 +88,15 @@ public class PlayerMovement : MonoBehaviour
             _currentEnemy.transform.localPosition = Vector3.zero;
             break;
         }
-
+        // Pickup meat
+        hits = Physics.OverlapSphere(transform.position, _grabRadius, _meatMask);
+        foreach (Collider hit in hits)
+        {
+            _currentMeat = hit.gameObject;
+            _currentMeat.transform.SetParent(_grabSocket);
+            _currentMeat.transform.localPosition = Vector3.zero;
+            break;
+        }
     }
 
     void TryTowerConstruction()

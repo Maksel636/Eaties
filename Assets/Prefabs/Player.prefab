@@ -91,6 +91,9 @@ MonoBehaviour:
   _towerSpotMask:
     serializedVersion: 2
     m_Bits: 128
+  _meatMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!143 &128093424387164409
 CharacterController:
   m_ObjectHideFlags: 0
