@@ -7,8 +7,8 @@ public class EscapeAnimal : MonoBehaviour
 {
     [SerializeField] private float _escapSpeed = 5f;
     [SerializeField] private float _rotation = 0;
-    public bool _isEscaping = false;
-    private int _direction;
+    public bool IsEscaping = false;
+    public bool IsCaptured = false;
 
     [SerializeField] private List<PlayerData> _playersData;
     [SerializeField] private LassoMech _lassoMech;
@@ -21,8 +21,8 @@ public class EscapeAnimal : MonoBehaviour
     [SerializeField] private float _shrinkSpeed = 1f;
     [SerializeField] private float _winScore = 1.5f;
     [SerializeField] private int _players;
-    private Color[] _playerColors = new Color[] { Color.red, Color.blue, Color.green, Color.yellow };
-    [SerializeField] private GameObject testObject;
+    private Color[] _playerColors = new Color[] { Color.blue, Color.yellow, Color.green, Color.mistyRose };
+  //  [SerializeField] private GameObject testObject;
     void Awake()
     {
         _playersData = new List<PlayerData>();
@@ -35,16 +35,17 @@ public class EscapeAnimal : MonoBehaviour
 
     void Update()
     {
-        if (_isEscaping)
+        if (IsEscaping)
             UpdateRotation();
     }
     public void StartEscaping()
     {
-        if(_isEscaping) return;
+        if(IsEscaping) return;
+        if(IsCaptured) return;
 
+        IsEscaping = true;
         _score = 0;
         _lassoDonut = Instantiate(_lassoDonutPrefab, transform.parent);
-        _isEscaping = true;
     }
     public void JoinPlayer(Transform player)
     {
@@ -128,23 +129,19 @@ public class EscapeAnimal : MonoBehaviour
             }
 
             p.rotation += _escapSpeed * p.direction * Time.deltaTime;
-
-            // rotate indicator around the animal
             p.indicatororigin.rotation = Quaternion.Euler(0, p.rotation, 0);
         }
     }
 
     private void EndCapturing()
     {
-        _isEscaping = false;
-        
-        //for (int i = 0; i < _players; i++)
-        //    _line[i].SetActive(false);
+        IsEscaping = false;
+        IsCaptured = true;
         foreach (var player in _playersData)
         {
             player.indicatororigin.gameObject.SetActive(false);
-            player.player.GetChild(0).gameObject.SetActive(false);
-            player.player.GetComponent<LassoMech>().IsAnimalEscaping = false;
+            //player.player.GetChild(0).gameObject.SetActive(false);
+            player.player.GetComponent<LassoMech>().ResetLasso();
 
         }
 
@@ -153,14 +150,5 @@ public class EscapeAnimal : MonoBehaviour
         _playersData.Clear();
 
         Destroy(_lassoDonut);
-        //foreach (GameObject indicator in _directionIndicator)
-        //    indicator.SetActive(false);
-
-
-    }
-
-    private int ChooseDirection()
-    {
-        return _direction = 1 == Random.Range(0, 2)? -1: 1;
     }
 }

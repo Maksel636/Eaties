@@ -9,8 +9,15 @@ public class CaptureAnimal : MonoBehaviour
     [SerializeField] private LassoMech _lassoMech;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Animal"))
+        if(_escapeAnimal != null)
+            if (_escapeAnimal.IsEscaping) return;
+
+        if (other.CompareTag("Animal") && _lassoMech.Istrowing)
         {
+            _escapeAnimal = other.transform.GetChild(0).gameObject.GetComponent<EscapeAnimal>();
+
+            if(_escapeAnimal.IsCaptured == true) return;
+
             StartCoroutine(StartCoroutine(other.transform));
 
             //_isCaptured = true;
@@ -27,10 +34,11 @@ public class CaptureAnimal : MonoBehaviour
     }
     private void Update()
     {
-        //if (_isCaptured)
-        //{
-        //    _lasso.SetActive(false);
-        //}
+        if (_lassoMech.IsAnimalEscaping && _escapeAnimal == null)
+        {
+            
+            _lassoMech.ResetLasso();
+        }
 
     }
 }
