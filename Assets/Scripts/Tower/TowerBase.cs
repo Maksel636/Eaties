@@ -101,6 +101,17 @@ public class TowerBase : MonoBehaviour
             _lineRenderer.enabled = false;
         }
     }
+
+    // Feed mechanic
+    private void OnTriggerEnter(Collider other)
+    {
+        const int hungerPoints = 30;
+        if (other.transform.CompareTag("Meat"))
+        {
+            Destroy(other.gameObject);
+            _hunger += hungerPoints;
+        }
+    }
 }
 
 public class HungerArgs : EventArgs

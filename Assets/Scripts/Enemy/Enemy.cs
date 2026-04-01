@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _startingHealth;
     private int _health;
+    [SerializeField] private GameObject _meatPrefab;
     public int Health
     {
         get { return _health; }
@@ -49,6 +50,13 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        // Spawn one meat, drop chance 1 in 3
+        int randomNr = Random.Range(0, 2);
+        if (randomNr == 0)
+        {
+            Instantiate(_meatPrefab, transform.position, Quaternion.identity);
+        }
+
         EnemyManager.Instance.EnemiesAlive--;
         Destroy(gameObject);
     }
