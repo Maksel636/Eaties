@@ -7,7 +7,7 @@ public class EscapeAnimal : MonoBehaviour
 {
     [SerializeField] private float _escapSpeed = 5f;
     [SerializeField] private float _rotation = 0;
-    private bool _isEscaping = false;
+    public bool _isEscaping = false;
     private int _direction;
 
     [SerializeField] private List<PlayerData> _playersData;
@@ -32,7 +32,7 @@ public class EscapeAnimal : MonoBehaviour
 
     void Start()
     {
-        StartEscaping();
+        //StartEscaping();
     }
 
     void Update()
@@ -42,8 +42,11 @@ public class EscapeAnimal : MonoBehaviour
     }
     public void StartEscaping()
     {
-        JoinPlayer(GameObject.FindGameObjectWithTag("Player").transform);
-        JoinPlayer(testObject.transform);
+        if(_isEscaping) return;
+
+
+        //JoinPlayer(GameObject.FindGameObjectWithTag("Player").transform);
+        //JoinPlayer(testObject.transform);
 
         _lassoDonut = Instantiate(_lassoDonutPrefab, transform.parent);
         //_rotation = Random.Range(0,360);
@@ -55,13 +58,21 @@ public class EscapeAnimal : MonoBehaviour
     }
     public void JoinPlayer(Transform player)
     {
+        StartEscaping(); // escape when the first player joins
+
         PlayerData data = new PlayerData();
 
-        player.GetChild(0).gameObject.SetActive(true);
+        //player.GetChild(0).gameObject.SetActive(true);
 
         data.player = player;
+
+        data.player.gameObject.GetComponent<LassoMech>().IsAnimalEscaping = true;
+
         data.indicatororigin = Instantiate(_directionIndicatorPrefab, transform).transform;
         data.indicatororigin.GetChild(0).GetComponent<Renderer>().material.color = _playerColors[_playersData.Count];
+
+        data.player.GetChild(0).gameObject.SetActive(true); // dubble check to make sure the line is active
+
 
         data.rotation = Random.Range(0f, 360f);
         data.direction = Random.Range(0, 2) == 0 ? -1 : 1;
@@ -142,6 +153,8 @@ public class EscapeAnimal : MonoBehaviour
         {
             player.indicatororigin.gameObject.SetActive(false);
             player.player.GetChild(0).gameObject.SetActive(false);
+            player.player.GetComponent<LassoMech>().IsAnimalEscaping = false;
+
         }
 
 
