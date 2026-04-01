@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerSpot
   _rangerPrefab: {fileID: 7969285544025273778, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
+  _piercingPrefab: {fileID: 408817976903149435, guid: 1caf92a6600e5234d8d0edd836f894fd, type: 3}
 --- !u!1 &7353304929233558274
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,11 +1,15 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering.UI;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int _startingHealth;
     private int _health;
     [SerializeField] private GameObject _meatPrefab;
+    [SerializeField] private EnemyType _type;
+    public EnemyType type => _type;
     public int Health
     {
         get { return _health; }
@@ -70,4 +74,10 @@ public class Enemy : MonoBehaviour
     {
         return _movement.GetPredictedPosition(futureTime);
     }
+}
+
+public enum EnemyType
+{
+    Basic,
+    Piercing
 }
