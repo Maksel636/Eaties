@@ -41,7 +41,6 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         _direction = (_targetPos - transform.position).normalized;
-        transform.forward = _direction;
         transform.Translate(_direction * (_moveSpeed * Time.deltaTime), Space.World);
 
         if (Vector3.Distance(transform.position, _targetPos) <= MOVEMENT_EPSILON)
@@ -64,6 +63,8 @@ public class EnemyMovement : MonoBehaviour
         _waypointIndex++;
         _target = Path.Instance.Waypoints[_waypointIndex];
         _targetPos = _target.transform.position + _pathOffset;
+
+        transform.forward = (_targetPos - transform.position).normalized;
     }
 
 
