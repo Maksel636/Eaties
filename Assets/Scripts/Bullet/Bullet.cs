@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, _maxLifetime);
+
     }
 
     // Update is called once per frame
@@ -21,7 +22,7 @@ public class Bullet : MonoBehaviour
         transform.Translate(Direction * (_flightSpeed * Time.deltaTime));
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
