@@ -4,6 +4,7 @@ public class TowerSpot : MonoBehaviour
 {
     private TowerBase _activeTower = null;
     [SerializeField] private GameObject _rangerPrefab;
+    [SerializeField] private GameObject _piercingPrefab;
     
     public bool HasActiveTower => _activeTower != null;
 
@@ -23,7 +24,15 @@ public class TowerSpot : MonoBehaviour
     {
         if (_activeTower) return false;
 
-        var towerObj = Instantiate(_rangerPrefab, transform.position, transform.rotation);
+        GameObject towerToSpawn = null;
+
+        switch (enemy.type)
+        {
+            case EnemyType.Basic: towerToSpawn = _rangerPrefab; break;
+            case EnemyType.Piercing: towerToSpawn = _piercingPrefab; break;
+        }
+
+        var towerObj = Instantiate(towerToSpawn, transform.position, transform.rotation);
         _activeTower = towerObj.GetComponent<TowerBase>();
         return _activeTower != null;
     }
