@@ -621,6 +621,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerRanger (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8475208497165967086, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
+      propertyPath: _hungerTime
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1169,3 +1173,4 @@ SceneRoots:
   - {fileID: 758906029189304869}
   - {fileID: 839059957}
   - {fileID: 1753582814}
+  - {fileID: 6082161084882814408}

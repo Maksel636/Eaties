@@ -1,14 +1,21 @@
+using System;
+using System.Xml.Linq;
 using TMPro;
 using UnityEngine;
 
 public class HungerUI : MonoBehaviour
 {
     int _hunger;
-    [SerializeField] TextMeshProUGUI _hungerText;
-    
+    [SerializeField] private TextMeshProUGUI _hungerText;
+    [SerializeField] private TowerBase _myTower;
 
-    private void UpdateUI(int hunger)
+    private void Awake()
     {
-        _hungerText.text = "Hunger: " + hunger;
+        _myTower._onHungerChanged += UpdateUI;        
+    }
+
+    private void UpdateUI(object sender, HungerArgs hunger)
+    {
+        _hungerText.text = "Hunger: " + hunger._hunger;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,14 +9,14 @@ public class TowerBase : MonoBehaviour
     private int _hunger;
     private const int _maxHunger = 100;
     protected int _hungerRemoveAmount = 10;
-
-    // Timers
+    public EventHandler<HungerArgs> _onHungerChanged;
     [SerializeField]
-    private float _hungerTime = 5f;
+    private float _hungerTime = 30f;
+
+
+    // Attack
     [SerializeField]
     private float _chargeAttackTime = 1f;
-
-    // Attack property
     protected bool _canAttack = true;
     public bool CanAttack
     {
@@ -38,6 +39,7 @@ public class TowerBase : MonoBehaviour
     private void Start()
     {
         InvokeRepeating(nameof(UpdateHunger), _hungerTime, _hungerTime);
+        _onHungerChanged?.Invoke(this, new HungerArgs(_hunger));
     }
 
     public virtual void Attack(Enemy enemy)
@@ -47,17 +49,28 @@ public class TowerBase : MonoBehaviour
 
         // Set can attack to false in the inherrited class
     }
+    
 
     public void UpdateHunger()
     {
-        // NOT FINISHED
         _hunger -= _hungerRemoveAmount;
-        //Invoke()
+
+        
+        _onHungerChanged?.Invoke(this, new HungerArgs(_hunger));
     }
 
     private IEnumerator ChargeAttack()
     {
         yield return new WaitForSeconds(_chargeAttackTime);
         _canAttack = true;
+    }
+}
+
+public class HungerArgs : EventArgs
+{
+    public int _hunger { get; }
+    public HungerArgs(int hunger)
+    {
+        _hunger = hunger;
     }
 }

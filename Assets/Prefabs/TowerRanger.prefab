@@ -66,9 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hunger: 100
-
-'
+  m_text: "Hunger: \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -153,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HungerUI
   _hungerText: {fileID: 2016459017211473094}
+  _myTower: {fileID: 8475208497165967086}
 --- !u!1 &2057555738909007024
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf5e94cc0d825344a28404e609a9b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerRanger
-  _hungerTime: 3
+  _hungerTime: 15
   _chargeAttackTime: 1
   _damage: 1
