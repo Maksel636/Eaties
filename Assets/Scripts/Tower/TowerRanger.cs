@@ -21,25 +21,13 @@ public class TowerRanger : TowerBase
         base.Attack(enemy);
         if(_canAttack)
         {
-            //enemy.TakeDamage(_damage);
             _canAttack = false;
 
-            
-            //Debug drawing
             Vector3 start = transform.position;
             start.y += 0.6f;
-
-
             Vector3 end = enemy.transform.position;
-
             float time = Vector3.Distance(start, end) / _bulletSpeed;
-
             Vector3 futureEnd = enemy.GetPredictedPosition(time);
-
-            float duration = 0.4f;
-
-            Debug.DrawLine(start, end, Color.blue, duration);
-            Debug.DrawLine(start, futureEnd, Color.red, time);
 
             var bulletObj = Instantiate(_bulletPrefab, start, Quaternion.Euler(0,0,0));
             
