@@ -21,7 +21,7 @@ public class GameHealth : MonobehaviourSingleton<GameHealth>
 
     public void TakeDamage()
     {
-        _currentHealth--;
+        _currentHealth -= 10;
         _onDamage?.Invoke(_currentHealth);
 
     }
