@@ -1421,7 +1421,7 @@ MonoBehaviour:
   _meatMask:
     serializedVersion: 2
     m_Bits: 256
-  _animator: {fileID: 0}
+  _animator: {fileID: 5026059189656858523}
 --- !u!114 &7664135176455281421
 MonoBehaviour:
   m_ObjectHideFlags: 0
