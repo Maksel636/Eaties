@@ -13,17 +13,16 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
     [SerializeField] private List<Wave> _waves;
     private int _waveIndex = 0;
 
+    public int EnemiesAlive { get; set; } = 0;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        StartCoroutine(SpawnWave());
-    }
+    [SerializeField] private float _cooldownBetweenWaves;
+    private float _currentCooldown = 0f;
+
 
     // Update is called once per frame
     void Update()
     {
-        if (_enemies.Count > 0)
+        if (EnemiesAlive > 0)
             return;
 
         if (_waveIndex >= _waves.Count)
@@ -33,12 +32,22 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
             return;
         }
 
-        StartCoroutine(SpawnWave());
+        if (_currentCooldown <= 0f)
+        {
+            StartCoroutine(SpawnWave());
+            _currentCooldown = _cooldownBetweenWaves;
+            return;
+        }
+
+        _currentCooldown -= Time.deltaTime;
     }
 
     private IEnumerator SpawnWave()
     {
+        Debug.Log("Starting Wave " + _waveIndex);
+
         Wave wave = _waves[_waveIndex];
+        EnemiesAlive = wave.Count;
 
         for (int idx = 0; idx < wave.Count; ++idx)
         {
@@ -58,6 +67,7 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 
     public void UnRegisterEnemy(Enemy enemy)
     {
+        EnemiesAlive--;
         _enemies.Remove(enemy);
     }
 

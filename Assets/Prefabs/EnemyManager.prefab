@@ -47,5 +47,21 @@ MonoBehaviour:
   _enemyPrefab: {fileID: 6521325674345590675, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
   _waves:
   - EnemyPrefab: {fileID: 6521325674345590675, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
-    Count: 3
+    Count: 1
     SpawnDelay: 1
+  - EnemyPrefab: {fileID: 6521325674345590675, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+    Count: 3
+    SpawnDelay: 0.8
+  - EnemyPrefab: {fileID: 6521325674345590675, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+    Count: 5
+    SpawnDelay: 1
+  - EnemyPrefab: {fileID: 6521325674345590675, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+    Count: 5
+    SpawnDelay: 0.4
+  - EnemyPrefab: {fileID: 6521325674345590675, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+    Count: 9
+    SpawnDelay: 1.3
+  - EnemyPrefab: {fileID: 6521325674345590675, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+    Count: 12
+    SpawnDelay: 0.8
+  _cooldownBetweenWaves: 1

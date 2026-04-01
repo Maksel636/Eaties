@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6798568117708065000}
   - component: {fileID: 4824329960191717400}
   - component: {fileID: 7008055637678513010}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: TowerSpot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 243746456080547662}
   - component: {fileID: 5867625656611659922}
   - component: {fileID: 8827583251282056924}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: TowerPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
