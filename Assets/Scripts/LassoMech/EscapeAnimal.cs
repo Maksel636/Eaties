@@ -135,10 +135,17 @@ public class EscapeAnimal : MonoBehaviour
 
     private void EndCapturing()
     {
+
+
         IsEscaping = false;
         IsCaptured = true;
+
+        _playersData[0].player.gameObject.GetComponent<PlayerMovement>()
+            .GrabCapturedAnimal(transform.parent.gameObject);    // first player that captured the animal gets the meat
+
         foreach (var player in _playersData)
         {
+
             player.indicatororigin.gameObject.SetActive(false);
             //player.player.GetChild(0).gameObject.SetActive(false);
             player.player.GetComponent<LassoMech>().ResetLasso();

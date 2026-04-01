@@ -338,7 +338,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.002
+  m_Radius: 0.003
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &561326235392455929
 MonoBehaviour:
@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowEndLasso
   _endLasso: {fileID: 1447152824849427654}
+  _forwardMovement: 0.3
 --- !u!114 &4946486919667613489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,6 +447,10 @@ PrefabInstance:
     - target: {fileID: 2639635086786642258, guid: 89b92a0ad13d78441b5327da99405a40, type: 3}
       propertyPath: m_Name
       value: Lasso end
+      objectReference: {fileID: 0}
+    - target: {fileID: 2639635086786642258, guid: 89b92a0ad13d78441b5327da99405a40, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3443204972400447849, guid: 89b92a0ad13d78441b5327da99405a40, type: 3}
       propertyPath: _lassoMech

@@ -82,21 +82,21 @@ public class PlayerMovement : MonoBehaviour
         
         // Pickup enemy
         Collider[] hits = Physics.OverlapSphere(transform.position, _grabRadius, _enemyMask);
-        foreach (Collider hit in hits)
-        {
-            Enemy enemy = hit.GetComponent<Enemy>();
+        //foreach (Collider hit in hits)
+        //{
+        //    //Enemy enemy = hit.GetComponent<Enemy>();
 
-            EscapeAnimal escape = enemy.GetComponentInChildren<EscapeAnimal>();
-            if (escape == null || !escape.IsCaptured) // verify that the creature is captured, if not
-                continue; // skip this enemy
+        //    //EscapeAnimal escape = enemy.GetComponentInChildren<EscapeAnimal>();
+        //    //if (escape == null || !escape.IsCaptured) // verify that the creature is captured, if not
+        //    //    continue; // skip this enemy
 
 
-            _currentEnemy = hit.GetComponent<Enemy>();
-            _currentEnemy.IsPickedUp = true;
-            _currentEnemy.transform.SetParent(_grabSocket);
-            _currentEnemy.transform.localPosition = Vector3.zero;
-            break;
-        }
+        //    _currentEnemy = hit.GetComponent<Enemy>();
+        //    _currentEnemy.IsPickedUp = true;
+        //    _currentEnemy.transform.SetParent(_grabSocket);
+        //    _currentEnemy.transform.localPosition = Vector3.zero;
+        //    break;
+        //}
         
 
         if (_currentEnemy != null) return; // You just picked up an enemy
@@ -148,5 +148,12 @@ public class PlayerMovement : MonoBehaviour
             Destroy(_currentMeat.gameObject);
             Debug.LogWarning("Drop meat");
         }
+    }
+    public void GrabCapturedAnimal(GameObject capturedEnemy)
+    {
+        _currentEnemy = capturedEnemy.GetComponent<Enemy>();
+        _currentEnemy.IsPickedUp = true;
+        _currentEnemy.transform.SetParent(_grabSocket);
+        _currentEnemy.transform.localPosition = Vector3.zero;
     }
 }
