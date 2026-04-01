@@ -31,6 +31,7 @@ public class ItemAnimator : MonoBehaviour
 
     private void FadeItem()
     {
+        if(_visuals == null) return;
         _isFading = true;
         StartCoroutine(FadeOutAndDestroy());
     }

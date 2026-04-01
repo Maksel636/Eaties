@@ -117,7 +117,7 @@ public class EscapeAnimal : MonoBehaviour
 
         if (Vector3.Dot(IndicatorToAnimal, PlayerToAnimal) > 0.6f) // see if the direction is close enough to the player direction
         {
-            Debug.Log("indictor close");
+           // Debug.Log("indictor close");
             _score += 1 * Time.deltaTime;
         }
     }
