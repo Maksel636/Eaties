@@ -414,9 +414,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerRanger
   _hungerTime: 15
-  _playerMask:
-    serializedVersion: 2
-    m_Bits: 512
   _chargeAttackTime: 1
   _damage: 1
   _bulletPrefab: {fileID: 2373347655552558195, guid: 13ac24c956ece7e49945fc19fe7f5ff9, type: 3}
