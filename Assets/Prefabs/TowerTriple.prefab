@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2154257204540123774
+--- !u!1001 &3498506143720313035
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,63 +8,59 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6502315402279057591}
     m_Modifications:
-    - target: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
+    - target: {fileID: 2872885218750941205, guid: f857035963b51c342b9cb52704887434, type: 3}
+      propertyPath: m_Name
+      value: Pig_Tower
       objectReference: {fileID: 0}
-    - target: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
+    - target: {fileID: 3212572101725557423, guid: f857035963b51c342b9cb52704887434, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
+    - target: {fileID: 3212572101725557423, guid: f857035963b51c342b9cb52704887434, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
+    - target: {fileID: 3212572101725557423, guid: f857035963b51c342b9cb52704887434, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
+    - target: {fileID: 3212572101725557423, guid: f857035963b51c342b9cb52704887434, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
+    - target: {fileID: 3212572101725557423, guid: f857035963b51c342b9cb52704887434, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
+    - target: {fileID: 3212572101725557423, guid: f857035963b51c342b9cb52704887434, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
+    - target: {fileID: 3212572101725557423, guid: f857035963b51c342b9cb52704887434, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
+    - target: {fileID: 3212572101725557423, guid: f857035963b51c342b9cb52704887434, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
+    - target: {fileID: 3212572101725557423, guid: f857035963b51c342b9cb52704887434, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
+    - target: {fileID: 3212572101725557423, guid: f857035963b51c342b9cb52704887434, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4073744368019707936, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
-      propertyPath: m_Name
-      value: Sitting_Octopussy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
---- !u!4 &3325483657041340644 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: f857035963b51c342b9cb52704887434, type: 3}
+--- !u!4 &2024484045984236132 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 3729834020970709658, guid: b905ceef895fb074ab5bbbb86d1c25ff, type: 3}
-  m_PrefabInstance: {fileID: 2154257204540123774}
+  m_CorrespondingSourceObject: {fileID: 3212572101725557423, guid: f857035963b51c342b9cb52704887434, type: 3}
+  m_PrefabInstance: {fileID: 3498506143720313035}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6771599327813519601
 PrefabInstance:
@@ -77,7 +73,7 @@ PrefabInstance:
     - target: {fileID: 7048487352546772059, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: _myTower
       value: 
-      objectReference: {fileID: 4078400329662712683}
+      objectReference: {fileID: 0}
     - target: {fileID: 7378010190361061886, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -120,7 +116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7969285544025273778, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: m_Name
-      value: TowerOctopus
+      value: TowerTriple
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8475208497165967086, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
@@ -129,7 +125,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 559942644533145670, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3325483657041340644}
+      addedObject: {fileID: 2024484045984236132}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7969285544025273778, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       insertIndex: -1
