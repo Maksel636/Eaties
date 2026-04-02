@@ -29,7 +29,7 @@ public class CaptureAnimal : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         if (_escapeAnimal != null)
-            if (!_escapeAnimal.IsEscaping) // if not escaping escape NOW
+            if (!_lassoMech.IsAnimalEscaping) // if not escaping escape NOW
             {
                 _lasso.SetActive(false);
                 _lassoMech.IsLassoing = false;
