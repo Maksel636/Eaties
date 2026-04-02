@@ -13,13 +13,12 @@ public class Audio : MonoBehaviour
     public Sound[] Sounds;
     public enum SoundType
     {
-        BladeEnemyContact,
-        BladePlayerContact,
-        BladeReflection,
-        Reload,
-        BladeCharge,
-        BladeLaunch,
-        PlayerHitByEnemy
+        Lasso,
+        TowerAttack,
+        Captured,
+        FailedCapture,
+        CreatureDeath,
+        LostGame
     }
     public static Audio Instance;
     [System.Serializable]

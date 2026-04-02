@@ -1932,7 +1932,7 @@ MonoBehaviour:
   _moveSpeed: 3
   _playerInput: {fileID: 8159504688651823875}
   _grabInput: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  _grabRadius: 0
+  _grabRadius: 0.47
   _grabSocket: {fileID: 6419750118777271388}
   _enemyMask:
     serializedVersion: 2
