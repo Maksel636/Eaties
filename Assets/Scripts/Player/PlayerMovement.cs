@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _controller = GetComponent<CharacterController>();
 
-        _grabInput.action.performed += HandleGrabInput;
+        //_grabInput.action.performed += HandleGrabInput;
     }
     void Update()
     {
@@ -66,6 +66,30 @@ public class PlayerMovement : MonoBehaviour
             _verticalSpeed = 0f;
         }
     }
+
+    public void OnJump(InputValue value)
+    {
+        if (!value.isPressed) return;
+
+        DropMeat();
+        if (_currentEnemy)
+        {
+            if (Physics.CheckSphere(transform.position, 0.1f, _towerSpotMask))
+            {
+                TryTowerConstruction();
+            }
+            else
+            {
+                //DropEnemy();
+            }
+
+        }
+        else
+        {
+            TryPickup();
+        }
+    }
+
 
     void HandleGrabInput(InputAction.CallbackContext context)
     {
