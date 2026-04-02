@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     private float _moveSpeed = 3f;
     [SerializeField]
     private PlayerInput _playerInput;
-    [SerializeField] private InputActionReference _grabInput;
     [SerializeField] private float _grabRadius;
     [SerializeField] private Transform _grabSocket;
     private Enemy _currentEnemy = null;
@@ -27,7 +26,6 @@ public class PlayerMovement : MonoBehaviour
     {
         _controller = GetComponent<CharacterController>();
 
-        _grabInput.action.performed += HandleGrabInput;
     }
     void Update()
     {
@@ -67,9 +65,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void HandleGrabInput(InputAction.CallbackContext context)
+    public void OnJump(InputValue value)
     {
-        if (!context.performed) return;
+        if (!value.isPressed) return;
 
         DropMeat();
         if (_currentEnemy)
@@ -89,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
             TryPickup();
         }
     }
-
+    
     void TryPickup()
     {
         if (_currentEnemy != null || _currentMeat != null) // Something is already picked up
@@ -98,23 +96,7 @@ public class PlayerMovement : MonoBehaviour
         
         // Pickup enemy
         Collider[] hits = Physics.OverlapSphere(transform.position, _grabRadius, _enemyMask);
-        //foreach (Collider hit in hits)
-        //{
-        //    //Enemy enemy = hit.GetComponent<Enemy>();
-
-        //    //EscapeAnimal escape = enemy.GetComponentInChildren<EscapeAnimal>();
-        //    //if (escape == null || !escape.IsCaptured) // verify that the creature is captured, if not
-        //    //    continue; // skip this enemy
-
-        //    Debug.LogError("Captures creature");
-
-        //    _currentEnemy = hit.GetComponent<Enemy>();
-        //    _currentEnemy.IsPickedUp = true;
-        //    _currentEnemy.transform.SetParent(_grabSocket);
-        //    _currentEnemy.transform.localPosition = Vector3.zero;
-        //    break;
-        //}
-        
+      
 
         if (_currentEnemy != null) return; // You just picked up an enemy
         // Pickup meat
