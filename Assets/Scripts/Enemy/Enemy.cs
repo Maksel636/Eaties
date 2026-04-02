@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int _startingHealth;
     private int _health;
     [SerializeField] private GameObject _meatPrefab;
+    [SerializeField] private GameObject _poofParticle;
     [SerializeField] private EnemyType _type;
     public EnemyType type => _type;
     public int Health
@@ -54,6 +55,8 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        Instantiate(_poofParticle, transform.position, Quaternion.identity);
+
         // Spawn one meat, drop chance 1 in 3
         int randomNr = Random.Range(0, 2);
         if (randomNr == 0)
@@ -80,5 +83,6 @@ public enum EnemyType
 {
     Basic,
     Piercing,
-    Octopus
+    Octopus,
+    Pigird
 }

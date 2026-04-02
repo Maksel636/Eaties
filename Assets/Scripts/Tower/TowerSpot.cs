@@ -6,7 +6,8 @@ public class TowerSpot : MonoBehaviour
     [SerializeField] private GameObject _rangerPrefab;
     [SerializeField] private GameObject _piercingPrefab;
     [SerializeField] private GameObject _octopusPrefab;
-    
+    [SerializeField] private GameObject _pigirdPrefab;
+
     public bool HasActiveTower => _activeTower != null;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,6 +33,7 @@ public class TowerSpot : MonoBehaviour
             case EnemyType.Basic: towerToSpawn = _rangerPrefab; break;
             case EnemyType.Piercing: towerToSpawn = _piercingPrefab; break;
             case EnemyType.Octopus: towerToSpawn= _octopusPrefab; break;
+            case EnemyType.Pigird: towerToSpawn = _pigirdPrefab; break;
         }
 
         var towerObj = Instantiate(towerToSpawn, transform.position, transform.rotation);

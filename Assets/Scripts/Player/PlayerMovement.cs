@@ -35,11 +35,19 @@ public class PlayerMovement : MonoBehaviour
         Vector2 input = _playerInput.actions["Move"].ReadValue<Vector2>(); ;
         Vector3 moveDirection = new Vector3(input.x, 0f, input.y);
         
-        if(!(moveDirection.magnitude < 0.01) && _animator != null)
+        if (_animator != null)
         {
-            if (!_animator.GetBool("isWalking")) 
-            _animator.SetBool("isWalking", true);
+            if ((moveDirection.magnitude > 0.01))
+            {
+                if (!_animator.GetBool("isWalking"))
+                    _animator.SetBool("isWalking", true);
+            }
+            else
+            {
+                _animator.SetBool("isWalking", false);
+            }
         }
+
 
         _controller.Move(moveDirection * (_moveSpeed * Time.deltaTime));
 

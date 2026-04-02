@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     private Transform _target;
     private int _waypointIndex = 0;
 
-    private const float MOVEMENT_EPSILON = 0.3f;
+    private const float MOVEMENT_EPSILON = 0.05f;
 
     [SerializeField] private float _maxPathOffset;
     private Vector3 _pathOffset;

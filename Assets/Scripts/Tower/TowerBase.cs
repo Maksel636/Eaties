@@ -17,6 +17,8 @@ public class TowerBase : MonoBehaviour
     [SerializeField]
     private float _chargeAttackTime = 1f;
     protected bool _canAttack = true;
+    private Animator _animator;
+
     public bool CanAttack
     {
         get { return _canAttack; }
@@ -27,12 +29,13 @@ public class TowerBase : MonoBehaviour
     [SerializeField] private float _range;
     public float Range => _range;
 
-    [SerializeField] GameObject _rotatable;
+    [SerializeField] protected GameObject _rotatable;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
         TowerManager.Instance.RegisterTower(this);
+        _animator = GetComponentInChildren<Animator>();
         _hunger = _maxHunger;
     }
 
@@ -63,6 +66,11 @@ public class TowerBase : MonoBehaviour
     {
         if (_canAttack)
         {
+            if (_animator!=null)
+            {
+                _animator.SetTrigger("isShooting");
+            }
+
             StartCoroutine(ChargeAttack());
             _targetEnemy = enemy;
         }
