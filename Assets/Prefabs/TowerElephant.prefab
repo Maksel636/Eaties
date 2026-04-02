@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 8475208497165967086}
   - component: {fileID: 4039482759425595663}
   m_Layer: 0
-  m_Name: TowerRanger
+  m_Name: TowerElephant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
