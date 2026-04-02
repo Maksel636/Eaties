@@ -20,6 +20,7 @@ public class TowerEightShot : TowerBase
         base.Attack(enemy);
         if (_canAttack)
         {
+            Audio.Instance.InitiateSound(Audio.SoundType.TowerAttack);
             _canAttack = false;
 
 

@@ -20,6 +20,7 @@ public class TowerTriple : TowerBase
         base.Attack(enemy);
         if(_canAttack)
         {
+            Audio.Instance.InitiateSound(Audio.SoundType.TowerAttack);
             _canAttack = false;
             StartCoroutine(DelayShotByAFrame());
         }       

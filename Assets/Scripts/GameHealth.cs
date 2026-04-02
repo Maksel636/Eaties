@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GameHealth : MonobehaviourSingleton<GameHealth>
 {
-    private int _startingHealth = 1;
+    private int _startingHealth = 10;
     public int StartingHealth => _startingHealth;
 
     private int _currentHealth;
