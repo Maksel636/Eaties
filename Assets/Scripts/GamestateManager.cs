@@ -32,7 +32,7 @@ public class GamestateManager : MonoBehaviour
 
     private void Update()
     {
-       // CheckGameWon();
+      CheckGameWon();
     }
 
     private void CheckGameWon()

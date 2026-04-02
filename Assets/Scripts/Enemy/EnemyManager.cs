@@ -72,7 +72,7 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
         if (_canSpawn == false) yield break; // Don't spawn when not in game scene
 
         Wave wave = _waves[_waveIndex];
-        EnemiesAlive = wave.Count;
+        EnemiesAlive += wave.Count;
 
         for (int idx = 0; idx < wave.Count; ++idx)
         {
