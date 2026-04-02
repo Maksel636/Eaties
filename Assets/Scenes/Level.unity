@@ -3304,6 +3304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthUI
   _healthText: {fileID: 2023714707}
+  _healthRenderer: {fileID: 4365215676369705177}
 --- !u!1001 &2056294118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3690,6 +3691,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cc416a7a0edd154191f5678e23ba872, type: 3}
+--- !u!23 &4365215676369705177 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8542362502164643509, guid: 3cc416a7a0edd154191f5678e23ba872, type: 3}
+  m_PrefabInstance: {fileID: 4365215676369705176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7550436256946364501
 PrefabInstance:
   m_ObjectHideFlags: 0
