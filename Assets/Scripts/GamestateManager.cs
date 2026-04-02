@@ -24,6 +24,7 @@ public class GamestateManager : MonoBehaviour
         if(health <= 0)
         {
             _loseText.SetActive(true);
+            Audio.Instance.InitiateSound(Audio.SoundType.LostGame);
             StartCoroutine(ReturnMainMenu());
             EnemyManager.Instance.CanSpawn = false;
         }

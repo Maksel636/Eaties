@@ -28,6 +28,7 @@ public class LassoMech : MonoBehaviour
                 Istrowing = true;
                 PlayerMovement pm = gameObject.GetComponent<PlayerMovement>(); // maybe set speed to 0 or something
                 _animator.SetTrigger("Trow");
+                Audio.Instance.InitiateSound(Audio.SoundType.Lasso);
                 _onesecTimer = 1f;
             }
             

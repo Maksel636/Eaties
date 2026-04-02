@@ -153,5 +153,6 @@ public class PlayerMovement : MonoBehaviour
         _currentEnemy.IsPickedUp = true;
         _currentEnemy.transform.SetParent(_grabSocket);
         _currentEnemy.transform.localPosition = Vector3.zero;
+        Audio.Instance.InitiateSound(Audio.SoundType.Captured);
     }
 }

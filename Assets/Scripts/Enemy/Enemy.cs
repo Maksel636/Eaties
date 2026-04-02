@@ -63,6 +63,7 @@ public class Enemy : MonoBehaviour
         {
             Instantiate(_meatPrefab, transform.position, Quaternion.identity);
         }
+        Audio.Instance.InitiateSound(Audio.SoundType.CreatureDeath);
 
         EnemyManager.Instance.EnemiesAlive--;
         Destroy(gameObject);
