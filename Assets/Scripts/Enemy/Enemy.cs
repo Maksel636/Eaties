@@ -80,5 +80,6 @@ public enum EnemyType
 {
     Basic,
     Piercing,
-    Octopus
+    Octopus,
+    Pigird
 }

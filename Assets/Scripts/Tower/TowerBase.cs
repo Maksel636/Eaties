@@ -29,7 +29,7 @@ public class TowerBase : MonoBehaviour
     [SerializeField] private float _range;
     public float Range => _range;
 
-    [SerializeField] GameObject _rotatable;
+    [SerializeField] protected GameObject _rotatable;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
