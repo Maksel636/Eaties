@@ -1912,6 +1912,9 @@ MonoBehaviour:
   - EnemyPrefab: {fileID: 4927678106812036195, guid: abf9f7773574f4d4290947022a8cc771, type: 3}
     Count: 4
     SpawnDelay: 1.5
+  - EnemyPrefab: {fileID: 4301692240232611419, guid: 45fa734f6ba67bd47916c77153700c7d, type: 3}
+    Count: 10
+    SpawnDelay: 1
 --- !u!4 &1311162156
 Transform:
   m_ObjectHideFlags: 0
