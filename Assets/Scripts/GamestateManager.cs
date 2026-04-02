@@ -29,6 +29,21 @@ public class GamestateManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        CheckGameWon();
+    }
+
+    private void CheckGameWon()
+    {
+        if(EnemyManager.Instance.EnemiesAlive <= 0 && EnemyManager.Instance.WaveIndex >= EnemyManager.Instance.NrWaves)
+        {
+            _winText.SetActive(true);
+            StartCoroutine(ReturnMainMenu());
+            EnemyManager.Instance.CanSpawn = false;
+        }
+    }
+
     private IEnumerator ReturnMainMenu()
     {
         yield return new WaitForSeconds(_waitForReturnTime);

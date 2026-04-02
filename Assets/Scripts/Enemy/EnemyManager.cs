@@ -10,6 +10,11 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 
     private List<Wave> _waves;
     private int _waveIndex = 0;
+    public int WaveIndex => _waveIndex;
+    public int NrWaves
+    {
+        get { return _waves.Count; }
+    }
 
     public int EnemiesAlive { get; set; } = 0;
 
