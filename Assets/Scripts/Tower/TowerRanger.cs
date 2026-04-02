@@ -21,6 +21,7 @@ public class TowerRanger : TowerBase
         base.Attack(enemy);
         if(_canAttack)
         {
+            Audio.Instance.InitiateSound(Audio.SoundType.TowerAttack);
             _canAttack = false;
 
             Vector3 end = enemy.transform.position;
