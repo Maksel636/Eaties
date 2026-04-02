@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerEightShot
   _hungerTime: 8
   _chargeAttackTime: 1
-  _range: 5
+  _range: 0.5
   _rotatable: {fileID: 3885350830321365862}
   _damage: 1
   _bulletPrefab: {fileID: 2373347655552558195, guid: 13ac24c956ece7e49945fc19fe7f5ff9, type: 3}
