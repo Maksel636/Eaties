@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7969285544025273778, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: m_Name
-      value: TowerPiercing
+      value: TowerLizard
       objectReference: {fileID: 0}
     - target: {fileID: 8475208497165967086, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: _range
@@ -201,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8475208497165967086, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: _hungerTime
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8475208497165967086, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: _bulletPrefab
