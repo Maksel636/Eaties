@@ -159,12 +159,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerEightShot
   _hungerTime: 30
   _chargeAttackTime: 1
-  _range: 0
+  _range: 5
   _rotatable: {fileID: 3885350830321365862}
   _damage: 1
   _bulletPrefab: {fileID: 2373347655552558195, guid: 13ac24c956ece7e49945fc19fe7f5ff9, type: 3}
   _bulletSocket: {fileID: 1009088698851310931}
-  _bulletDistance: 0
+  _bulletDistance: 5
 --- !u!1 &3885350830321365862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7499061039670737815, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
