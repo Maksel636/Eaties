@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1934095423668386319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6829245491750846773}
+  - component: {fileID: 2559403386913977260}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6829245491750846773
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934095423668386319}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.53885, y: -0, z: -6.05592}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2559403386913977260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934095423668386319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e684576a2dd74c43a0721b6a15acc48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio
+  Sounds:
+  - Type: 0
+    Clip: {fileID: 6418180475301049370, guid: bca61efe0dd9eb24eb11a37ae7f8a751, type: 2}
+    duration: 1
+    Volume: 1
+  - Type: 1
+    Clip: {fileID: 6418180475301049370, guid: 2131ab55fcaea6e40af3b60ae16408e2, type: 2}
+    duration: 1
+    Volume: 1
+  - Type: 2
+    Clip: {fileID: 6418180475301049370, guid: 8e98cea3b53633c438a0d860aa82ae29, type: 2}
+    duration: 1
+    Volume: 1
+  - Type: 3
+    Clip: {fileID: 6418180475301049370, guid: 36ca68ead001e0e4a9f7a8beb23e35c0, type: 2}
+    duration: 1
+    Volume: 1
+  - Type: 4
+    Clip: {fileID: 6418180475301049370, guid: e5b9911b97cfe8541ad85e114b90f860, type: 2}
+    duration: 1
+    Volume: 1
+  - Type: 5
+    Clip: {fileID: 6418180475301049370, guid: 36ca68ead001e0e4a9f7a8beb23e35c0, type: 2}
+    duration: 2
+    Volume: 1
