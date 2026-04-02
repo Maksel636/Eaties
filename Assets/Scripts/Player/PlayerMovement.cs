@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
-                DropEnemy();
+                //DropEnemy();
             }
 
         }

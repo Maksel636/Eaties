@@ -53,7 +53,7 @@ public class EscapeAnimal : MonoBehaviour
         _score = 0;
         _lassoDonut = Instantiate(_lassoDonutPrefab, transform.parent);
     }
-    public void JoinPlayer(Transform player)
+    public void JoinPlayer(Transform player, Color playerColor)
     {
         StartEscaping(); // escape when the first player joins
 
@@ -66,7 +66,7 @@ public class EscapeAnimal : MonoBehaviour
         data.player.gameObject.GetComponent<LassoMech>().IsAnimalEscaping = true;
 
         data.indicatororigin = Instantiate(_directionIndicatorPrefab, transform).transform;
-        data.indicatororigin.GetChild(0).GetComponent<Renderer>().material.color = _playerColors[_playersData.Count];
+        data.indicatororigin.GetChild(0).GetComponent<Renderer>().material.color = playerColor;
 
         data.player.GetChild(0).gameObject.SetActive(true); // dubble check to make sure the line is active
 
