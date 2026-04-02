@@ -1011,7 +1011,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.25
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -1061,7 +1061,7 @@ LineRenderer:
     numCapVertices: 0
     alignment: 0
     textureMode: 1
-    textureScale: {x: 0.2, y: 0.44}
+    textureScale: {x: 0.1, y: 0.44}
     shadowBias: 0.5
     generateLightingData: 1
   m_UseWorldSpace: 0
