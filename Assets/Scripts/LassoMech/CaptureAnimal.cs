@@ -7,6 +7,7 @@ public class CaptureAnimal : MonoBehaviour
     [SerializeField] private GameObject _lasso;
     [SerializeField] private EscapeAnimal _escapeAnimal;
     [SerializeField] private LassoMech _lassoMech;
+    [SerializeField] private Color _playerColor;
     private void OnTriggerEnter(Collider other)
     {
         if(_escapeAnimal != null)
@@ -33,7 +34,7 @@ public class CaptureAnimal : MonoBehaviour
                 _lasso.SetActive(false);
                 _lassoMech.IsLassoing = false;
                 _escapeAnimal = other.transform.GetChild(0).gameObject.GetComponent<EscapeAnimal>();
-                _escapeAnimal.JoinPlayer(_lasso.transform.parent);
+                _escapeAnimal.JoinPlayer(_lasso.transform.parent, _playerColor);
             }
 
 

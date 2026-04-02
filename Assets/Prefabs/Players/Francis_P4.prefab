@@ -172,6 +172,7 @@ MonoBehaviour:
   _lasso: {fileID: 1050476508722827223}
   _escapeAnimal: {fileID: 0}
   _lassoMech: {fileID: 7664135176455281421}
+  _playerColor: {r: 0.69803923, g: 0.25490198, b: 0.70980394, a: 0}
 --- !u!54 &8833944080036988555
 Rigidbody:
   m_ObjectHideFlags: 0
