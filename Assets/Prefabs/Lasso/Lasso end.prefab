@@ -102,6 +102,7 @@ MonoBehaviour:
   _lasso: {fileID: 2639635086786642258}
   _escapeAnimal: {fileID: 0}
   _lassoMech: {fileID: 0}
+  _playerColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!54 &9075099911555072758
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -193,6 +194,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2872079895546425931, guid: 13e0424af41aa2445a032b705f3a8e0d, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1ef57afd08fb472429e9f764cb28c990, type: 2}
     - target: {fileID: 919132149155446097, guid: 13e0424af41aa2445a032b705f3a8e0d, type: 3}
       propertyPath: m_Name
       value: Lasso
