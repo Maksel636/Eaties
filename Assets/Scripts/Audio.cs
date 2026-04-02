@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Audio : MonoBehaviour
 {
@@ -24,7 +26,8 @@ public class Audio : MonoBehaviour
     public class Sound
     {
         public SoundType Type;
-        public AudioClip Clip;
+        public AudioResource Clip;
+        public float duration;
         [Range(0, 1)] public float Volume;
         [HideInInspector] AudioSource Source;
     }
@@ -48,9 +51,9 @@ public class Audio : MonoBehaviour
         }
         GameObject soundObject = new GameObject(type.ToString());
         AudioSource source = soundObject.AddComponent<AudioSource>();
-        source.clip = sound.Clip;
+        source.resource = sound.Clip;
         source.volume = sound.Volume;
         source.Play();
-        Destroy(soundObject, sound.Clip.length);
+        Destroy(soundObject, sound.duration);
     }
 }
