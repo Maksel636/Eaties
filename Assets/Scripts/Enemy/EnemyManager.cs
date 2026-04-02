@@ -25,6 +25,15 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
         }
     }
 
+    public void ResetGame()
+    {
+        _waveIndex = 0;
+        EnemiesAlive = 0;
+        _currentCooldown = 0f;
+
+        CanSpawn = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
