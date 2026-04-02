@@ -53,7 +53,7 @@ Material:
     m_Floats:
     - _Emissiveness: 3.3
     - _FillAmount: 1
-    - _Height: 4.24
+    - _Height: 2.36
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
