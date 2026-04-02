@@ -2228,6 +2228,18 @@ MonoBehaviour:
   - EnemyPrefab: {fileID: 4301692240232611419, guid: 45fa734f6ba67bd47916c77153700c7d, type: 3}
     Count: 10
     SpawnDelay: 1
+  - EnemyPrefab: {fileID: 4301692240232611419, guid: 2032a8baf0ff94e4a96c728b8dc18598, type: 3}
+    Count: 15
+    SpawnDelay: 1
+  - EnemyPrefab: {fileID: 6521325674345590675, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+    Count: 25
+    SpawnDelay: 0.8
+  - EnemyPrefab: {fileID: 4927678106812036195, guid: abf9f7773574f4d4290947022a8cc771, type: 3}
+    Count: 20
+    SpawnDelay: 1
+  - EnemyPrefab: {fileID: 6293614292796648397, guid: 1bf3a297d83619640bfa4272c78a4ba4, type: 3}
+    Count: 1
+    SpawnDelay: 1
 --- !u!4 &1311162156
 Transform:
   m_ObjectHideFlags: 0
