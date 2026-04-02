@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerTriple
   _hungerTime: 5
-  _chargeAttackTime: 2
+  _chargeAttackTime: 3
   _range: 1.1
   _rotatable: {fileID: 3885350830321365862}
   _damage: 1
