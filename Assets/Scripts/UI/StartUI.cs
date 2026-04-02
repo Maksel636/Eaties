@@ -27,8 +27,6 @@ public class StartUI : MonoBehaviour
     private void PlayGame()
     {
         SceneManager.LoadScene("Level");
-        GameHealth.Instance.CurrentHealth = GameHealth.Instance.StartingHealth;
-        EnemyManager.Instance.ResetGame();
     }
 
     private void LoadHowToPlay()

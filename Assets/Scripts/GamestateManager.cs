@@ -4,24 +4,26 @@ using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GamestateManager : MonobehaviourSingleton<GamestateManager>
+public class GamestateManager : MonoBehaviour
 {
     private float _waitForReturnTime = 1.5f;
-    //[SerializeField] GameObject _winText;
-    //[SerializeField] GameObject _loseText;
+    [SerializeField] GameObject _winText;
+    [SerializeField] GameObject _loseText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        GameHealth.Instance.CurrentHealth = GameHealth.Instance.StartingHealth;
+        EnemyManager.Instance.ResetGame();
         GameHealth.Instance.AddObserver(CheckGameOver);
-        //_loseText.SetActive(false);
-        //_winText.SetActive(false);
+        _loseText.SetActive(false);
+        _winText.SetActive(false);
     }
 
     private void CheckGameOver(int health)
     {
         if(health <= 0)
         {
-            //_loseText.SetActive(true);
+            _loseText.SetActive(true);
             StartCoroutine(ReturnMainMenu());
             EnemyManager.Instance.CanSpawn = false;
         }
