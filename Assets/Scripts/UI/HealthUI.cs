@@ -4,6 +4,7 @@ using UnityEngine;
 public class HealthUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _healthText;
+    [SerializeField] private Renderer _healthRenderer;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,5 +22,7 @@ public class HealthUI : MonoBehaviour
     private void UpdateHealth(int newHealth)
     {
         _healthText.text = "Health: " + newHealth;
+
+        _healthRenderer.material.SetFloat("_FillAmount", (float)newHealth/10);
     }
 }
