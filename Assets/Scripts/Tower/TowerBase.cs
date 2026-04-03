@@ -44,6 +44,9 @@ public class TowerBase : MonoBehaviour
         // Rotate tower towards targetting enemy
         if (_targetEnemy)
         {
+           //EscapeAnimal escapeAnimal = _targetEnemy.transform.GetChild(0).GetComponent<EscapeAnimal>();
+           // if(escapeAnimal.IsEscaping) return; // do not shoot when getting captured
+
             Vector3 forward = _targetEnemy.transform.position - _rotatable.transform.position;
             forward.y = 0;
 

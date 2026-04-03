@@ -45,8 +45,9 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if(GetComponentInChildren<EscapeAnimal>().IsEscaping) return; // don't take damage when capturing
         _health -= damage;
-
+        // FEEDBACK
         if (_health <= 0)
         {
             Die();

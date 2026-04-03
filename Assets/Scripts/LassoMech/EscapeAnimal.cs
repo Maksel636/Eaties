@@ -61,19 +61,19 @@ public class EscapeAnimal : MonoBehaviour
 
         //player.GetChild(0).gameObject.SetActive(true);
 
-        data.player = player;
+        data.Player = player;
 
-        data.player.gameObject.GetComponent<LassoMech>().IsAnimalEscaping = true;
+        data.Player.gameObject.GetComponent<LassoMech>().IsAnimalEscaping = true;
 
-        data.indicatororigin = Instantiate(_directionIndicatorPrefab, transform).transform;
-        data.indicatororigin.GetChild(0).GetComponent<Renderer>().material.color = playerColor;
+        data.Indicatororigin = Instantiate(_directionIndicatorPrefab, transform).transform;
+        data.Indicatororigin.GetChild(0).GetComponent<Renderer>().material.color = playerColor;
+        data.PlayerColor = playerColor;
+        data.Player.GetChild(0).gameObject.SetActive(true); // dubble check to make sure the line is active
 
-        data.player.GetChild(0).gameObject.SetActive(true); // dubble check to make sure the line is active
 
-
-        data.rotation = Random.Range(0f, 360f);
-        data.direction = Random.Range(0, 2) == 0 ? -1 : 1;
-        data.escapeSteps = Random.Range(0, 200);
+        data.Rotation = Random.Range(0f, 360f);
+        data.Direction = Random.Range(0, 2) == 0 ? -1 : 1;
+        data.EscapeSteps = Random.Range(0, 200);
 
         _playersData.Add(data);
     }
@@ -84,7 +84,7 @@ public class EscapeAnimal : MonoBehaviour
 
         foreach (var p in _playersData)
         {
-            UpdatePlayerScore(p.player, p.player.GetChild(0), p.indicatororigin.GetChild(0));
+            UpdatePlayerScore(p.Player, p.Player.GetChild(0), p.Indicatororigin.GetChild(0), p.PlayerColor);
         }
 
         UpdateLassoSize();
@@ -102,7 +102,7 @@ public class EscapeAnimal : MonoBehaviour
         _lassoDonut.transform.localScale = Vector3.one * scale;
     }
 
-    private void UpdatePlayerScore(Transform playerTransform, Transform playerLine, Transform directionObject)
+    private void UpdatePlayerScore(Transform playerTransform, Transform playerLine, Transform directionObject, Color playerColor)
     {
         Vector3 PlayerToAnimal = transform.position - playerTransform.position;
         Vector3 IndicatorToAnimal = transform.position - directionObject.transform.position;
@@ -111,19 +111,24 @@ public class EscapeAnimal : MonoBehaviour
         IndicatorToAnimal.Normalize();
         PlayerToAnimal.Normalize();
 
-        
+        Renderer directioRenderer = directionObject.GetComponentInChildren<Renderer>();
+
 
         if (Vector3.Dot(IndicatorToAnimal, PlayerToAnimal) > 0.6f) // see if the direction is close enough to the player direction
         {
-           // Debug.Log("indictor close");
+            directioRenderer.material.SetColor("_EmissionColor", playerColor);           // Debug.Log("indictor close");
             _score += 1 * Time.deltaTime;
+        }
+        else
+        {
+            directioRenderer.material.SetColor("_EmissionColor", Color.black);           // Debug.Log("indictor close");
         }
     }
     private void LateUpdate()
     {
         foreach (var p in _playersData)
         {
-            LateUpdateLine(p.player, p.player.GetChild(0));
+            LateUpdateLine(p.Player, p.Player.GetChild(0));
         }
         
     }
@@ -139,16 +144,16 @@ public class EscapeAnimal : MonoBehaviour
     {
         foreach (var p in _playersData)
         {
-            p.escapeSteps -= 100 * Time.deltaTime;
+            p.EscapeSteps -= 100 * Time.deltaTime;
 
-            if (p.escapeSteps <= 0)
+            if (p.EscapeSteps <= 0)
             {
-                p.escapeSteps = Random.Range(0, 200);
-                p.direction = Random.Range(0, 2) == 0 ? -1 : 1;
+                p.EscapeSteps = Random.Range(0, 200);
+                p.Direction = Random.Range(0, 2) == 0 ? -1 : 1;
             }
 
-            p.rotation += _escapSpeed * p.direction * Time.deltaTime;
-            p.indicatororigin.rotation = Quaternion.Euler(0, p.rotation, 0);
+            p.Rotation += _escapSpeed * p.Direction * Time.deltaTime;
+            p.Indicatororigin.rotation = Quaternion.Euler(0, p.Rotation, 0);
         }
     }
 
@@ -159,15 +164,15 @@ public class EscapeAnimal : MonoBehaviour
         IsEscaping = false;
         IsCaptured = true;
 
-        _playersData[0].player.gameObject.GetComponent<PlayerMovement>()
+        _playersData[0].Player.gameObject.GetComponent<PlayerMovement>()
             .GrabCapturedAnimal(transform.parent.gameObject);    // first player that captured the animal gets the meat
 
         foreach (var player in _playersData)
         {
 
-            player.indicatororigin.gameObject.SetActive(false);
+            player.Indicatororigin.gameObject.SetActive(false);
             //player.player.GetChild(0).gameObject.SetActive(false);
-            player.player.GetComponent<LassoMech>().ResetLasso();
+            player.Player.GetComponent<LassoMech>().ResetLasso();
 
         }
 

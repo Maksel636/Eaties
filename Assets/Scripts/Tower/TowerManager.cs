@@ -33,6 +33,7 @@ public class TowerManager : MonobehaviourSingleton<TowerManager>
             foreach (var enemy in _enemies)
             {
                 if (enemy.IsPickedUp) continue;
+                if(enemy.GetComponentInChildren<EscapeAnimal>().IsEscaping) continue; // dont should at escaping animals
 
                 float distance = Vector2.Distance(tower.transform.position, enemy.transform.position);
                 if (distance > tower.Range) continue;

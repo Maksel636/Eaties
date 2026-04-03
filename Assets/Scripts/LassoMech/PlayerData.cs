@@ -10,12 +10,13 @@ namespace Assets.Scripts.LassoMech
     [System.Serializable]
     public class PlayerData
     {
-        public Transform player;
-        public Transform indicatororigin;
+        public Transform Player;
+        public Transform Indicatororigin;
+        public Color PlayerColor;
 
-        public float rotation;
-        public int direction;
-        public float escapeSteps;
+        public float Rotation;
+        public int Direction;
+        public float EscapeSteps;
     }
 }
 
