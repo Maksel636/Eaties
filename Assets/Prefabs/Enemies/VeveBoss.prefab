@@ -46,8 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EscapeAnimal
   _directionIndicatorPrefab: {fileID: 2544505540525343994, guid: baa92b8ff78d8b04d981da8524e97ed3, type: 3}
   _lassoDonutPrefab: {fileID: 734330034618856392, guid: 54930c6dcdff72f4da1f4110a1123386, type: 3}
-  _winScore: 40
-  _escapSpeed: 150
+  _winScore: 45
+  _escapSpeed: 90
   _escapeSteps: 60
   _shrinkSpeed: 1
   _score: 0
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 8078672050038928159}
   - component: {fileID: 8162024652396788545}
   m_Layer: 6
-  m_Name: Boss
+  m_Name: VeveBoss
   m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26e8818a0e8d5a4fb0f1493927ef621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  _startingHealth: 50
+  _startingHealth: 100
   _meatPrefab: {fileID: 8991169546765293074, guid: 49d5f022e30463e4184062660eed4b63, type: 3}
   _poofParticle: {fileID: 5521528460169066732, guid: 1139df6304c6ab547940082a0f3cfe32, type: 3}
   _type: 4

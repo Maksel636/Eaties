@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   _moveInput: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  _moveSpeed: 3
+  _moveSpeed: 4
   _playerInput: {fileID: 7045914679471291163}
   _grabRadius: 0.47
   _grabSocket: {fileID: 5051225971733791369}

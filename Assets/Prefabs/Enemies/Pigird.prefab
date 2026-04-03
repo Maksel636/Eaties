@@ -70,6 +70,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 223312786517709358, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+      propertyPath: _moveSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1987550525721124832, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.299
@@ -80,11 +84,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5793025923865629001, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
       propertyPath: _startingHealth
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6521325674345590675, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
       propertyPath: m_Name
-      value: PigirdEnemy
+      value: Pigird
       objectReference: {fileID: 0}
     - target: {fileID: 6708047790687141112, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -125,6 +129,18 @@ PrefabInstance:
     - target: {fileID: 6708047790687141112, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780684506973908977, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+      propertyPath: _winScore
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780684506973908977, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+      propertyPath: _escapSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780684506973908977, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+      propertyPath: _escapeSteps
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

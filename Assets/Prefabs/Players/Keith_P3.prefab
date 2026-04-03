@@ -1120,7 +1120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   _moveInput: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  _moveSpeed: 3
+  _moveSpeed: 4
   _playerInput: {fileID: 2346717555283720162}
   _grabRadius: 0.47
   _grabSocket: {fileID: 7503035422968246215}
@@ -1319,7 +1319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &904312239761211558
 Transform:
   m_ObjectHideFlags: 0

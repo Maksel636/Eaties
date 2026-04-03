@@ -49,7 +49,8 @@ public class ItemAnimator : MonoBehaviour
 
             isActive = !isActive; // Toggle the active state
 
-            _visuals.SetActive(isActive);
+            if(_visuals != null)
+                _visuals.SetActive(isActive);
 
             yield return new WaitForSeconds(flikkerDuration);
 

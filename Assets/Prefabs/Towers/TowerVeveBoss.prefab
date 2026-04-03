@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 8475208497165967086}
   - component: {fileID: 4039482759425595663}
   m_Layer: 10
-  m_Name: TowerElephant
+  m_Name: TowerVeveBoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -347,7 +347,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.55605, y: -0, z: -0.2225}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3077537953542930178}
   - {fileID: 559942644533145670}
@@ -387,11 +387,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf5e94cc0d825344a28404e609a9b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerRanger
-  _hungerTime: 9
-  _chargeAttackTime: 1
-  _range: 1
+  _hungerTime: 6
+  _chargeAttackTime: 0.3
+  _range: 1.5
   _rotatable: {fileID: 7499061039670737815}
-  _damage: 1
+  _damage: 2
   _bulletPrefab: {fileID: 2373347655552558195, guid: 13ac24c956ece7e49945fc19fe7f5ff9, type: 3}
   _bulletSocket: {fileID: 6050741565620352418}
 --- !u!54 &4039482759425595663
@@ -429,6 +429,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 559942644533145670}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 84de669a9ad4dfb478248dc9fa6903af, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84de669a9ad4dfb478248dc9fa6903af, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84de669a9ad4dfb478248dc9fa6903af, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 84de669a9ad4dfb478248dc9fa6903af, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -468,6 +480,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 84de669a9ad4dfb478248dc9fa6903af, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84de669a9ad4dfb478248dc9fa6903af, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7027816239160909547, guid: 84de669a9ad4dfb478248dc9fa6903af, type: 3}
       propertyPath: m_Layer

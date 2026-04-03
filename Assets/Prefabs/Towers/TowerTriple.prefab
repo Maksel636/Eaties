@@ -127,9 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c3c027be08db3342aaebb1d79b73044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerTriple
-  _hungerTime: 6
-  _chargeAttackTime: 3
-  _range: 1.1
+  _hungerTime: 7
+  _chargeAttackTime: 0.8
+  _range: 1.5
   _rotatable: {fileID: 3885350830321365862}
   _damage: 1
   _bulletPrefab: {fileID: 9153339107579627656, guid: da7e4b5032cd4e946807b4080f064054, type: 3}

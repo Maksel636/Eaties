@@ -18,7 +18,7 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 
     public int EnemiesAlive { get; set; } = 0;
 
-    private float _cooldownBetweenWaves = 3f;
+    private float _cooldownBetweenWaves = 0f;
     private float _currentCooldown = 0f;
 
     private void Start()

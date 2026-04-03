@@ -41,15 +41,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 862f507b20d68d9468cb8c5d3790c932, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 862f507b20d68d9468cb8c5d3790c932, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 862f507b20d68d9468cb8c5d3790c932, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 862f507b20d68d9468cb8c5d3790c932, type: 3}
       propertyPath: m_LocalPosition.x
@@ -90,6 +90,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 862f507b20d68d9468cb8c5d3790c932, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 862f507b20d68d9468cb8c5d3790c932, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 862f507b20d68d9468cb8c5d3790c932, type: 3}
       propertyPath: m_Name
@@ -189,7 +193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7969285544025273778, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: m_Name
-      value: TowerLizard
+      value: TowerJeffBoss
       objectReference: {fileID: 0}
     - target: {fileID: 8475208497165967086, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: _range
@@ -197,7 +201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8475208497165967086, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: _damage
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8475208497165967086, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: _hungerTime
@@ -209,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 7697514142867507255, guid: 22604678498ee1d4eba8b4b6af31addd, type: 3}
     - target: {fileID: 8475208497165967086, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: _chargeAttackTime
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

@@ -159,4 +159,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemAnimator
   _rotationSpeed: 40
   _timer: 0
-  _despawnTime: 15
+  _despawnTime: 20

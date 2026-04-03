@@ -26,7 +26,7 @@ public class EscapeAnimal : MonoBehaviour
     public bool IsCaptured = false;
 
     private GameObject _lassoDonut;
-    private float _rotation = 0;
+  //  private float _rotation = 0;
     //[SerializeField] private int _players;
   //  [SerializeField] private GameObject testObject;
     void Awake()

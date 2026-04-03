@@ -72,6 +72,9 @@ MonoBehaviour:
   _octopusPrefab: {fileID: 3702270384638360899, guid: 3870f4b173e4e96478886849530c70e6, type: 3}
   _pigirdPrefab: {fileID: 3702270384638360899, guid: be9197e388b787a48a70932925c5d114, type: 3}
   _basicBoss: {fileID: 7969285544025273778, guid: 0506e5fbbb49dbf448b647392f6bac4f, type: 3}
+  _jeffBoss: {fileID: 408817976903149435, guid: 0f83b05665993e34ba5c718df3519bac, type: 3}
+  _rauBoss: {fileID: 3702270384638360899, guid: 5c595a9522839714e94176892f9a44ce, type: 3}
+  _pigirdBoss: {fileID: 3702270384638360899, guid: a0b0f3e1f0d23e640a1c8a9b6953ee64, type: 3}
 --- !u!1 &7353304929233558274
 GameObject:
   m_ObjectHideFlags: 0

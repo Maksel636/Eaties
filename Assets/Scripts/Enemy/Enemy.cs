@@ -32,8 +32,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyMovement _movement;
     public float MoveSpeed => _movement.MoveSpeed;
 
+    Color _originalColor;
+    Material _material;
     private void Awake()
     {
+       _material = GetComponentInChildren<Renderer>().material;
+
+        _originalColor = _material.color;
         _health = _startingHealth;
     }
 
@@ -42,16 +47,24 @@ public class Enemy : MonoBehaviour
     {
         
     }
-
     public void TakeDamage(int damage)
     {
         if(GetComponentInChildren<EscapeAnimal>().IsEscaping) return; // don't take damage when capturing
         _health -= damage;
         // FEEDBACK
+        
+        _material.color = Color.red;
+
+        Invoke("ResetColor", 0.1f);
+
         if (_health <= 0)
         {
             Die();
         }
+    }
+    private void ResetColor()
+    {
+        GetComponentInChildren<Renderer>().material.color = _originalColor;
     }
 
     private void Die()
@@ -59,7 +72,7 @@ public class Enemy : MonoBehaviour
         Instantiate(_poofParticle, transform.position, Quaternion.identity);
 
         // Spawn one meat, drop chance 1 in 3
-        int randomNr = Random.Range(0, 2);
+        int randomNr = Random.Range(0, 1); // 50% chance to drop meat
         if (randomNr == 0)
         {
             Instantiate(_meatPrefab, transform.position, Quaternion.identity);
@@ -83,9 +96,13 @@ public class Enemy : MonoBehaviour
 
 public enum EnemyType
 {
-    Basic,
-    Piercing,
-    Octopus,
+    Eve,
+    Jeff,
+    Rau,
     Pigird,
-    BasicBoss
+    EveBoss,
+    JeffBoss,
+    RauBoss,
+    PigirdBoss
+
 }

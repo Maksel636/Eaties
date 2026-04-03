@@ -120,7 +120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7969285544025273778, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
       propertyPath: m_Name
-      value: TowerOctopus
+      value: TowerRau
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8475208497165967086, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
@@ -157,14 +157,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d9dad317bad854492a3c3d1590f475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerEightShot
-  _hungerTime: 9
-  _chargeAttackTime: 1
-  _range: 2
+  _hungerTime: 8
+  _chargeAttackTime: 1.5
+  _range: 1.2
   _rotatable: {fileID: 3885350830321365862}
   _damage: 1
   _bulletPrefab: {fileID: 2373347655552558195, guid: 13ac24c956ece7e49945fc19fe7f5ff9, type: 3}
   _bulletSocket: {fileID: 1009088698851310931}
-  _bulletDistance: 5
+  _bulletDistance: 3
 --- !u!1 &3885350830321365862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7499061039670737815, guid: 861f5debee017234c9bf8bfb84ff434c, type: 3}
