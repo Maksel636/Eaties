@@ -85,5 +85,6 @@ public enum EnemyType
     Basic,
     Piercing,
     Octopus,
-    Pigird
+    Pigird,
+    BasicBoss
 }

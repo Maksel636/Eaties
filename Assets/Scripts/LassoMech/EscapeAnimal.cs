@@ -17,7 +17,7 @@ public class EscapeAnimal : MonoBehaviour
     //[SerializeField] private LassoMech _lassoMech;
     [Header("Extra Data")]
     [SerializeField] private float _shrinkSpeed;
-    [SerializeField] private Color[] _playerColors = new Color[] { Color.blue, Color.yellow, Color.green, Color.mistyRose };
+    //[SerializeField] private Color[] _playerColors = new Color[] { Color.blue, Color.yellow, Color.green, Color.mistyRose };
     [SerializeField] private float _score;
     [SerializeField] private List<PlayerData> _playersData;
 
@@ -97,7 +97,7 @@ public class EscapeAnimal : MonoBehaviour
     private void UpdateLassoSize()
     {
         float progress = Mathf.Clamp01((_score * _shrinkSpeed) / _winScore);
-        float scale = Mathf.Lerp(200f, 100f, progress);
+        float scale = Mathf.Lerp(200f, 70f, progress);
 
         _lassoDonut.transform.localScale = Vector3.one * scale;
     }
@@ -111,15 +111,28 @@ public class EscapeAnimal : MonoBehaviour
         IndicatorToAnimal.Normalize();
         PlayerToAnimal.Normalize();
 
-        playerLine.LookAt(transform.position);
-        playerLine.localScale = Vector3.Distance(playerTransform.position, transform.position) * Vector3.forward + Vector3.one * 0.1f;
-
+        
 
         if (Vector3.Dot(IndicatorToAnimal, PlayerToAnimal) > 0.6f) // see if the direction is close enough to the player direction
         {
            // Debug.Log("indictor close");
             _score += 1 * Time.deltaTime;
         }
+    }
+    private void LateUpdate()
+    {
+        foreach (var p in _playersData)
+        {
+            LateUpdateLine(p.player, p.player.GetChild(0));
+        }
+        
+    }
+
+    private void LateUpdateLine(Transform playerTransform, Transform line)
+    {
+        line.LookAt(transform.position);
+        line.localScale = Vector3.Distance(playerTransform.position, transform.position) * Vector3.forward + Vector3.one * 0.1f;
+
     }
 
     private void UpdateIndicators()

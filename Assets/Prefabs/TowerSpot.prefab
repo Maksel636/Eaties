@@ -71,6 +71,7 @@ MonoBehaviour:
   _piercingPrefab: {fileID: 408817976903149435, guid: 1caf92a6600e5234d8d0edd836f894fd, type: 3}
   _octopusPrefab: {fileID: 3702270384638360899, guid: 3870f4b173e4e96478886849530c70e6, type: 3}
   _pigirdPrefab: {fileID: 3702270384638360899, guid: be9197e388b787a48a70932925c5d114, type: 3}
+  _basicBoss: {fileID: 7969285544025273778, guid: 0506e5fbbb49dbf448b647392f6bac4f, type: 3}
 --- !u!1 &7353304929233558274
 GameObject:
   m_ObjectHideFlags: 0

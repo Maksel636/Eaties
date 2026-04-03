@@ -18,16 +18,19 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 
     public int EnemiesAlive { get; set; } = 0;
 
-    private float _cooldownBetweenWaves = 1f;
+    private float _cooldownBetweenWaves = 3f;
     private float _currentCooldown = 0f;
 
     private void Start()
     {
+
         var waveData = FindFirstObjectByType<WaveData>();
         if (waveData)
         {
             _waves = waveData.Waves;
         }
+        Debug.Log("wavescount" + NrWaves);
+        _waveIndex = 5;
     }
 
     public void ResetGame()
@@ -42,8 +45,15 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
     // Update is called once per frame
     void Update()
     {
+
+        GameObject[] enemies =  GameObject.FindGameObjectsWithTag("Animal");
+        EnemiesAlive = enemies.Length;
+
         if (EnemiesAlive > 0)
             return;
+
+
+
 
         if (_waveIndex >= _waves.Count)
         {
@@ -53,8 +63,9 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 
         if (_currentCooldown <= 0f)
         {
-            StartCoroutine(SpawnWave());
+            Debug.Log("spawnwave");
             _currentCooldown = _cooldownBetweenWaves;
+            StartCoroutine(SpawnWave());
             return;
         }
 
@@ -72,10 +83,12 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
         if (_canSpawn == false) yield break; // Don't spawn when not in game scene
 
         Wave wave = _waves[_waveIndex];
-        EnemiesAlive = wave.Count;
+       // EnemiesAlive = wave.Count;
 
         for (int idx = 0; idx < wave.Count; ++idx)
         {
+            Debug.Log("spawnEnemy: " + wave.EnemyPrefab.name);
+
             var obj = Instantiate(wave.EnemyPrefab);
             obj.transform.position = Path.Instance.Waypoints[0].transform.position;
             _enemies.Add(obj.GetComponent<Enemy>());
@@ -85,14 +98,14 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
         ++_waveIndex;
     }
 
-    public void RegisterEnemy(Enemy enemy)
-    {
-        _enemies.Add(enemy);
-    }
+    //public void RegisterEnemy(Enemy enemy)
+    //{
+    //    _enemies.Add(enemy);
+    //}
 
     public void UnRegisterEnemy(Enemy enemy)
     {
-        EnemiesAlive--;
+        //EnemiesAlive--;
         _enemies.Remove(enemy);
     }
 

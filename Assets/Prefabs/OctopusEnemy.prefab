@@ -130,6 +130,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6780684506973908977, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+      propertyPath: _winScore
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780684506973908977, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+      propertyPath: _escapSpeed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780684506973908977, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+      propertyPath: _escapeSteps
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6780684506973908977, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+      propertyPath: _shrinkSpeed
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 790371206209309165, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
