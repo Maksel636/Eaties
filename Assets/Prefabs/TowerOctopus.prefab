@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d9dad317bad854492a3c3d1590f475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerEightShot
-  _hungerTime: 8
+  _hungerTime: 9
   _chargeAttackTime: 1
   _range: 2
   _rotatable: {fileID: 3885350830321365862}

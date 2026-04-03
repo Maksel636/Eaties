@@ -52,11 +52,12 @@ MonoBehaviour:
   _shrinkSpeed: 1
   _score: 0
   _playersData:
-  - player: {fileID: 0}
-    indicatororigin: {fileID: 0}
-    rotation: 0
-    direction: 0
-    escapeSteps: 0
+  - Player: {fileID: 0}
+    Indicatororigin: {fileID: 0}
+    PlayerColor: {r: 0, g: 0, b: 0, a: 0}
+    Rotation: 0
+    Direction: 0
+    EscapeSteps: 0
   IsEscaping: 0
   IsCaptured: 0
 --- !u!1 &6293614292796648397
@@ -142,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a26e8818a0e8d5a4fb0f1493927ef621, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  _startingHealth: 30
+  _startingHealth: 50
   _meatPrefab: {fileID: 8991169546765293074, guid: 49d5f022e30463e4184062660eed4b63, type: 3}
   _poofParticle: {fileID: 5521528460169066732, guid: 1139df6304c6ab547940082a0f3cfe32, type: 3}
   _type: 4

@@ -2211,7 +2211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveData
   _waves:
-  - EnemyPrefab: {fileID: 6521325674345590675, guid: 5fbb3f7f731483546828c0dcf58df37f, type: 3}
+  - EnemyPrefab: {fileID: 6293614292796648397, guid: 1bf3a297d83619640bfa4272c78a4ba4, type: 3}
     Count: 1
     SpawnDelay: 1
   - EnemyPrefab: {fileID: 4927678106812036195, guid: abf9f7773574f4d4290947022a8cc771, type: 3}
@@ -2242,8 +2242,8 @@ MonoBehaviour:
     Count: 20
     SpawnDelay: 1
   - EnemyPrefab: {fileID: 6293614292796648397, guid: 1bf3a297d83619640bfa4272c78a4ba4, type: 3}
-    Count: 1
-    SpawnDelay: 1
+    Count: 5
+    SpawnDelay: 5
 --- !u!4 &1311162156
 Transform:
   m_ObjectHideFlags: 0
