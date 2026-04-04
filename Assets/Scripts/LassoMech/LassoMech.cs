@@ -7,16 +7,18 @@ public class LassoMech : MonoBehaviour
     [SerializeField] private Animator _animator;
     public bool IsLassoing = false;
     [SerializeField] private GameObject _lasso;
-    public bool IsAnimalEscaping = false;
+    public bool IsMyAnimalEscaping = false;
     public bool Istrowing = false;
     private float _onesecTimer = 0f;
+    private CaptureAnimal _captureAnimal;
     private void Start()
     {
+        _captureAnimal = GetComponentInChildren<CaptureAnimal>();
         _animator.speed = 0.5f;
     }
     public void OnLasso(InputValue value)
     {
-        if(IsAnimalEscaping) return;
+        if(IsMyAnimalEscaping) return;
         _lasso.SetActive(true);
 
         if (value.isPressed)
@@ -52,14 +54,22 @@ public class LassoMech : MonoBehaviour
 
     public void OnStopLasso(InputValue value)
     {
+        if (IsMyAnimalEscaping) // if the animal is escaping but not captured yet, reset everything
+        {
+            ResetLasso();
+            Debug.Log("reset lasso");
+            _captureAnimal.OnStopLasso();
+        }
         IsLassoing = false;
         _lasso.SetActive(false);
     }
     public void ResetLasso()
     {
-        IsAnimalEscaping = false;
+        IsMyAnimalEscaping = false;
         IsLassoing = false;
         _lasso.SetActive(false);
         transform.GetChild(0).gameObject.SetActive(false);
+
     }
+
 }

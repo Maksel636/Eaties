@@ -29,8 +29,6 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
         {
             _waves = waveData.Waves;
         }
-        Debug.Log("wavescount" + NrWaves);
-        _waveIndex = 5;
     }
 
     public void ResetGame()
@@ -63,7 +61,7 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 
         if (_currentCooldown <= 0f)
         {
-            Debug.Log("spawnwave");
+           // Debug.Log("spawnwave");
             _currentCooldown = _cooldownBetweenWaves;
             StartCoroutine(SpawnWave());
             return;
@@ -87,7 +85,7 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
 
         for (int idx = 0; idx < wave.Count; ++idx)
         {
-            Debug.Log("spawnEnemy: " + wave.EnemyPrefab.name);
+           // Debug.Log("spawnEnemy: " + wave.EnemyPrefab.name);
 
             var obj = Instantiate(wave.EnemyPrefab);
             obj.transform.position = Path.Instance.Waypoints[0].transform.position;
@@ -98,10 +96,10 @@ public class EnemyManager : MonobehaviourSingleton<EnemyManager>
         ++_waveIndex;
     }
 
-    //public void RegisterEnemy(Enemy enemy)
-    //{
-    //    _enemies.Add(enemy);
-    //}
+    public void RegisterEnemy(Enemy enemy)
+    {
+        _enemies.Add(enemy);
+    }
 
     public void UnRegisterEnemy(Enemy enemy)
     {

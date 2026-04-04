@@ -1,5 +1,7 @@
+using Assets.Scripts.LassoMech;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CaptureAnimal : MonoBehaviour
 {
@@ -29,7 +31,7 @@ public class CaptureAnimal : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         if (_escapeAnimal != null)
-            if (!_lassoMech.IsAnimalEscaping) // if not escaping escape NOW
+            if (!_lassoMech.IsMyAnimalEscaping) // if not escaping escape NOW
             {
                 _lasso.SetActive(false);
                 _lassoMech.IsLassoing = false;
@@ -41,11 +43,18 @@ public class CaptureAnimal : MonoBehaviour
     }
     private void Update()
     {
-        if (_lassoMech.IsAnimalEscaping && _escapeAnimal == null)
+        if (_lassoMech.IsMyAnimalEscaping && _escapeAnimal == null)
         {
             
             _lassoMech.ResetLasso();
         }
 
+    }
+    public void OnStopLasso() // called when the player stops lassoing, if the animal is escaping but not captured yet, reset everything
+    {
+        if(_escapeAnimal != null && !_escapeAnimal.IsCaptured)
+        {
+            _escapeAnimal.PlayerLeft(_playerColor);
+        }
     }
 }

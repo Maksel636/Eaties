@@ -1,6 +1,8 @@
 using Assets.Scripts.LassoMech;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
 
 public class EscapeAnimal : MonoBehaviour
@@ -63,7 +65,7 @@ public class EscapeAnimal : MonoBehaviour
 
         data.Player = player;
 
-        data.Player.gameObject.GetComponent<LassoMech>().IsAnimalEscaping = true;
+        data.Player.gameObject.GetComponent<LassoMech>().IsMyAnimalEscaping = true;
 
         data.Indicatororigin = Instantiate(_directionIndicatorPrefab, transform).transform;
         data.Indicatororigin.GetChild(0).GetComponent<Renderer>().material.color = playerColor;
@@ -182,4 +184,33 @@ public class EscapeAnimal : MonoBehaviour
 
         Destroy(_lassoDonut);
     }
+   public void PlayerLeft(Color playerColor)
+    {
+        if (!IsCaptured)
+
+        IsCaptured = false;
+
+        foreach (var player in _playersData) // if the player that left is in the list, remove him and his indicator
+        {
+            if (player.PlayerColor == playerColor)
+            {
+                player.Indicatororigin.gameObject.SetActive(false);
+                _playersData.Remove(player);
+                break;
+            }
+        }
+
+        if (_playersData.Count < 1) // if no players are left, stop escaping and reset everything
+        {
+            foreach (var player in _playersData)
+            {
+                player.Indicatororigin.gameObject.SetActive(false);
+                player.Player.GetComponent<LassoMech>().ResetLasso();
+            }
+            IsEscaping = false;
+            IsCaptured = false;
+            Destroy(_lassoDonut);
+        }
+    }
+
 }

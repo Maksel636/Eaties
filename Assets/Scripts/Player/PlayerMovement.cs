@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -64,6 +65,10 @@ public class PlayerMovement : MonoBehaviour
             _verticalSpeed = 0f;
         }
     }
+    public void OnStopLasso(InputValue value)
+    {
+        DestroyEnemy();
+    }
 
     public void OnJump(InputValue value)
     {
@@ -79,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
             else
             {
                 //DropEnemy();
+               // DestroyEnemy();
             }
 
         }
@@ -87,7 +93,16 @@ public class PlayerMovement : MonoBehaviour
             TryPickup();
         }
     }
-    
+
+    private void DestroyEnemy()
+    {
+        if(_currentEnemy == null) return;
+
+        _currentEnemy.IsPickedUp = false;
+        Destroy(_currentEnemy.gameObject);
+        _currentEnemy = null;
+    }
+
     void TryPickup()
     {
         if (_currentEnemy != null || _currentMeat != null) // Something is already picked up
